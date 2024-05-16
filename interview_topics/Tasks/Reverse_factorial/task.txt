@@ -1,0 +1,32 @@
+1.Reverse The Number (123--321)
+
+2.Palindrome Number (121=121)
+
+3.Factorial (4! = 1*2*3*4)
+
+4.Prime Number (cant get fully divide by 1 and own)
+
+5.Factors Program (4 = The factors of 4 are integers that divide 4 without leaving any remainder. )
+
+6.Perfect Number(6 =1+2+3 addition of factors)
+
+7.Spy Number (1124 = 1+1+2+4 = 1*1*2*4)
+
+8.Strong Number (145 = 1!+4!+5! = 145)
+
+9.Number of Digit (121 = 3 digits)
+
+10.ArmStrong Number (153 = 1*1*1 + 5*5*5 + 3*3*3  3 times multiply bcoz no of digits are 3)
+
+
+Find the sum of the series upto n terms
+Write a program to calculate the sum of series up to n term. For example, if n =5 the series will become 2 + 22 + 222 + 2222 + 22222 = 24690
+
+Given:
+
+# number of terms
+n = 5
+Expected output:
+
+
+24690

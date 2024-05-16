@@ -1,0 +1,238 @@
+from threading import Thread, current_thread, Lock
+
+class Flight:
+	def __init__(self, available_seat):
+		self.available_seat = avilable_seat
+		self.l = Lock()
+	def reserve(self, need_seat):
+		self.l.aquire()
+		if self.available_seat >= self.need_seat:
+			name = current_thread().name
+			self.available_seat -= self.need_seat
+			print(f'{need_seat} seat is allocated to {name}')
+		else:
+			name = current_thread().name
+			print(f'Sorry!! {name}no seats available'
+		self.l.release()
+f = Flight(1)
+t = Thread(target = f.reserve, name = 'aaa', args = (1,))
+t1 = Thread(target = f.reserve, name = 'bbb', args = (1,))
+t2 = Thread(target = f.reserve, name = 'ccc', args = (1,))	
+t3 = Thread(target = f.reserve, name = 'ddd', args = (1,))
+t.start()
+t1.start()
+t2.start()
+t3.start()
+**********************************************************
+Time saving
+
+
+import time
+from threading import Thread
+d = time.time()
+
+def fun1():
+    for i in range(0,5,1):
+        print('*1*')
+        time.sleep(1)
+        
+def fun2():
+    for j in range(0,5,1):
+        print('*2*')
+        time.sleep(1)
+fun1()
+fun2()
+t1 = Thread(target=fun1)
+t2 = Thread(target=fun2)
+t1.start()
+t2.start()
+t2.join()
+t1.join()
+e = time.time()
+
+print(e-d)
+
+************************************************************
+
+from threading import Thread, current_thread
+
+def even():
+    for i in range(2, 10, 2):
+        print(i, current_thread().name)
+
+def odd():
+    for i in range(1, 10, 2):
+        print(i, current_thread().name)
+
+t1 = Thread(target = even, name = 't1')
+t2 = Thread(target = odd, name = 't2')
+
+t1.start()
+t2.start()
+
+*********************************************
+from threading import Thread, current_thread 
+
+print('---- Program starts ---', current_thread().name)
+class Num:
+    def __init__(self, startt, end, step):
+        self.startt = startt
+        self.end = end
+        self.step = step
+
+    def even(self):
+        for i in range(self.startt, self.end, self.step):
+            print(i, current_thread().name)
+
+    def odd(self):
+        for i in range(self.startt, self.end, self.step):
+            print(i, current_thread().name)
+
+n1 = Num(2, 10, 2)
+n2 = Num(1, 10, 2)
+
+t1 = Thread(target = n1.even, name = 'ET')
+t2 = Thread(target = n2.odd, name = 'OT')
+
+t1.start()
+t2.start()
+
+print('----- Program Ends -----', current_thread().name)
+
+**********************************************************
+
+from threading import Thread, current_thread
+
+print('--- Program Starts ---')
+
+class Num(Thread):
+    def __init__(self, startt, end, step):
+        Thread.__init__(self)
+        self.startt = startt
+        self.end = end
+        self.step = step
+
+    def run(self):
+        for i in range(self.startt, self.end, self.step):
+            print(i, current_thread().name)
+
+n1 = Num(2, 10, 2)
+n2 = Num(1, 10, 2)
+
+n1.start()
+n2.start()
+
+print('--- Program Ends ---', current_thread().name)
+
+***********************************************************
+from threading import Thread, current_thread, Lock
+print('--- Program started ---', current_thread().name)
+class Num:
+    def __init__(self, startt, end, step):
+        self.startt = startt
+        self.end = end
+        self.step = step
+
+    def even(self):
+        for i in range(self.startt, self.end, self.step):
+            print(i, current_thread().name)
+
+    def odd(self):
+        for i in range(self.startt, self.end, self.step):
+            print(i, current_thread().name)
+e = Num(2, 10, 2)
+o = Num(1, 10, 2)
+
+t1 = Thread(target = e.even, name = 'ET')
+t2 = Thread(target = o.odd, name = 'OT')
+
+t1.start()
+t1.join()
+t2.start()
+t2.join()
+print('--- Program Ends ---')
+
+*****************************************************
+from threading import Thread, current_thread, Lock
+
+print('--- Program Starts ---')
+l = Lock()
+class Sample(Thread):
+    def __init__(self, msg):
+        Thread.__init__(self)
+        self.msg = msg
+
+    def run(self):
+        l.acquire()
+        print('[')
+        print(self.msg)
+        print(']')
+        l.release()
+
+n1 = Sample('PYTHON')
+n2 = Sample('JAVA')
+n3 = Sample('CPP')
+
+n1.start()
+n2.start()
+n3.start()
+
+print('--- Program Ends ---')
+***********************************************************
+from threading import *
+import time
+
+def display():
+    print(current_thread().name,'---Started---')
+    time.sleep(1)
+    print(current_thread().name,'---Ended---')
+print('The number of active threads :', active_count())
+t1 = Thread(target = display, name = 'ChildThread-1')
+t2 = Thread(target = display, name = 'ChildThread-2')
+t3 = Thread(target = display, name = 'ChildThread-3')
+
+t1.start()
+t2.start()
+t3.start()
+print('The number of active Threads:', active_count())
+time.sleep(5)
+print('The number of active Threads:', active_count())
+
+***********************************************************
+from threading import *
+mt = current_thread()
+print(mt.daemon)
+
+***********************************************************
+from threading import *
+import time
+def job1():
+    print('Executed by t1')
+    t2 = Thread(target = job2)
+    print('t2 is Daemon:', t2.daemon)
+    t2.start()
+
+def job2():
+    print('Executed by t2')
+
+t1 = Thread(target = job1)
+t1.setDaemon(True)
+print('t1 is Daemon', t1.daemon)
+t1.start()
+time.sleep(5)
+
+**********************************************************
+from threading import *
+import time
+def job():
+    for i in range(10):
+        print('Lazy Thread')
+        time.sleep(1)
+
+t = Thread(target = job)
+t.setDaemon(True)
+t.start()
+time.sleep(5)
+print('End of main Thread')
+
+		

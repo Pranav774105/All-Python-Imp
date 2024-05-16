@@ -1,0 +1,78 @@
+API:-
+	API stands for an application programming interface.
+	It is a set of protocols, routines or tools used to build software application.
+	It's a way for different applications to communicate with each other and exchange data.
+	By using apis developers can easily build complex applications.
+	Application refers to any software with a distinct function.
+	The interface means a contract of service between two applications. This contract defines how two applications
+	communicate with each other using requests and responses.
+
+Types of APIs
+	Standalone APIs:-
+		An API that can be run on a local machine only using a specific platform.
+
+	Web APIs:-
+		Web APIs are APIs that can be accessed using the HTTP protocol. The API defines endpoints, and valid
+	request and response formats.
+		Web APIs are categorized into two APIs
+		1 REST API and 2 SOAP API.
+		
+		1. REST API:-
+			REST (representational state transfer) is a very popular web API architecture. It is an Architecture
+		style.
+			REST API is an API which is created using REST architecture.
+			To Be a REST API, an API must follow certain guidelines.
+			
+			I) Client-server architecture:-
+				The Interface is separated from the backend and data storage. This allows for flexibility and components
+			can evolve independently of each other.
+
+			II) Statelessness:-
+				Every Rest Api has to be stateless. i.e.
+				No client context is stored on the server between requests.
+				Every request will be treated as a new request.
+
+			III) Cacheability:-
+				Clients can cache responses so a REST API response must state whether it can be cached or not.
+				A cacheable response is an HTTP response that can be cached, that is stored to be retrieved 
+			and used later, saving a new request to the server.
+
+			IV) Layered System:-
+				The API will work whether is it directly communicating with the server or through an intermediary such as
+				load balancer.
+
+		2. SOAP API:-
+			SOAP(Simple object access protocol) is an established web API protocol. It is intended to be extensible,
+			neutral(supports various range of communication protocols like SMTP, FTP, HTTP, TCP, and more).
+			The SOAP Specification includes,
+
+			I) The Processing model: means how to process SOAP messages.
+
+			II) Extensibility model: SOAP Features and modules.
+
+			III) Protocol binding rules: how to use SOAP with an underlying protocol, such as HTTP.
+
+			IV) Message Construct: how to structure a SOAP message.
+
+
+		Note that it is possible to build a RESTful API while using SOAP protocols.
+
+
+		Difference between REST and SOAP:
+
+		SOAP is a simple object access protocol while rest is representational state transfer it is an architectural
+		style.
+
+		SOAP is an XML-based protocol where the rest can use XML as well as JSON for messaging.
+
+		SOAP API uses a special language WSDL(Web Service Description Language) whereas rest API has no specific 
+		the language uses HTTP for message passing.
+
+		SOAP-based APIs are more secure while the rest APIs are less secure.
+
+		SOAP API uses more bandwidth compared to rest API.
+
+		Parsing the XML data is slower than parsing json data so the rest APIs are faster than soap API.
+
+		
+		

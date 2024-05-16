@@ -1,0 +1,88 @@
+from sqlalchemy import create_engine, Column, Integer, String, Float
+from sqlalchemy.orm import sessionmaker, declarative_base
+
+DB_URL = 'mysql://root:root@127.0.0.1:3306/b29sqlal'
+
+engine = create_engine(DB_URL)
+Base = declarative_base()
+
+class Student(Base):
+    __tablename__ = 'students'
+    id = Column(Integer, primary_key=True)
+    name = Column(String(60))
+    age = Column(Integer)
+    grade = Column(Float)
+
+    def __str__(self):
+        return f'\n****** STUDENT DETAILS *****'\
+               f'\nSTUDENT ID  : {self.id}'\
+               f'\nSTUDENT NAME: {self.name}'\
+               f'\nSTUDENT AGE : {self.age}'\
+               f'\nSTUDENT GRADE: {self.grade}'
+
+Base.metadata.create_all(engine)
+Session = sessionmaker(bind=engine)
+session = Session()
+
+while True:
+    choice = int(input('\t-----MENU-----'\
+                       '\n\t1. INSERT DATA'\
+                       '\n\t2. RETRIEVE DATA'\
+                       '\n\t3. UPDATE DATA'\
+                       '\n\t4. DELETE DATA'\
+                       '\n\t5. EXIT'\
+                       '\n\tEnter Your CHOICE:'))
+
+    if choice == 1:
+        n = int(input('How many students do you want to enter:'))
+
+        students_list = []
+        
+        for _ in range(n):
+            name = input('Enter Student NAME:')
+            age = int(input('Enter Student AGE:'))
+            grade = float(input('Enter Student GRADE:'))
+
+            student = Student(name=name, age=age, grade=grade)
+            students_list.append(student)
+            
+        session.add_all(students_list)
+        
+    elif choice == 2:
+        all_or_one = int(input('\nDo you want to display:'\
+                               '\n1. All Records'\
+                               '\n2. Particular Record'\
+                               '\nEnter Choice:'))
+
+        if all_or_one == 1:
+            result = session.query(Student)
+
+            for student in result:
+                print(student)
+        
+        elif all_or_one == 2:
+            student_id = int(input('Enter the Student ID:'))
+
+            result = session.query(Student).filter(Student.id == student_id)
+
+            for student in result:
+                print(student)
+
+    elif choice == 3:
+        student_id = int(input('\nEnter the Student ID you want to update:'))
+
+        new_grade = float(input('Enter the new grade:'))
+
+        session.query(Student).filter(Student.id == student_id).update({Student.grade: new_grade})
+        
+    elif choice == 4:
+        student_id = int(input('\nEnter the Student ID you want to delete:'))
+
+        session.query(Student).filter(Student.id == student_id).delete()
+
+    elif choice == 5:
+        break
+
+    session.commit()
+
+session.close()

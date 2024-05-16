@@ -1,0 +1,50 @@
+Python generator functions are a simple way to create iterators. 
+
+
+How to Create a Python Generator?
+A Python generator is created like a normal function but we do not use the return statement in generators.
+
+we use the yield keyword.
+When we use the yield keyword inside a function, it automatically becomes a generator function.
+
+def mygen():
+	
+    yield 10
+
+    yield 20
+
+    yield 40
+
+gen = mygen()
+
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
+
+Here, the mygen() function is a generator function in which we used 3 yield statements.
+
+The next() function used on the generator object returns the value of the first yield statement. 
+Again calling the next() will then return the value from the second function and so on.
+When it gets exhausted the next function raises the StopIteration exception.
+
+One thing to notice here is that when the generator yields the values it remembers the value of the variable n between each call.
+
+Why Generators are Used?
+
+The generators yield one value at a time from a set of items.
+So they are memory efficient as they require less space and we don’t have to store everything at once.
+It is also easier to implement an infinite generation of series.
+Generators are also helpful in reading and performing operations on large files.
+
+************************************
+Memory utilization
+
+l = [x for x in range(100)]
+print(l.__sizeof__())
+
+l = (x for x in range(100))
+print(l.__sizeof__())
+
+**********************************
+

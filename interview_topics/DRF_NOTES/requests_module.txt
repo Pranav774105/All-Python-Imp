@@ -1,0 +1,12 @@
+Requests -
+		requests allows you to send the HTTP requests extremely easily.
+		By using requests module we can easily consume third party api's in our python program or python application.
+		
+Installation -
+		pip install requests
+
+using requests module in python program
+
+		import requests
+
+requests module provides you in-built http methods which you can use for sending the request over the network.

@@ -1,0 +1,250 @@
+Uploading images in Django
+
+settings.py 
+
+MEDIA_ROOT =  'media'
+MEDIA_URL = '/media/'
+
+
+MEDIA_ROOT is for server path to store files in the computer.
+MEDIA_URL is the reference URL for the browser to access the files over Http.
+
+ 
+
+
+
+
+
+
+
+
+
+In the urls.py(project_level) we should edit the configuration like this
+
+
+from django.conf import settings
+from django.conf.urls.static import static
+if settings.DEBUG:
+        urlpatterns += static(settings.MEDIA_URL,
+                              document_root=settings.MEDIA_ROOT)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A sample models.py should be like this,
+
+in that we have created a Car model which consists of car name and its image. 
+In this project we are taking the  Brand Name and its image from the user. 
+
+
+
+# models.py
+ class Car(models.Model):
+    name = models.CharField(max_length=50)
+    car_img = models.ImageField(upload_to='images/')
+
+
+
+Here upload_to will specify, to which directory the images should reside,
+by default django creates the directory under media directory which will 
+be automatically created when we upload an image.
+
+
+
+
+
+
+
+
+
+
+
+we are dealing with model form to make content easier to understand.
+
+# forms.py
+
+from django import forms
+from .models import Car
+ 
+ 
+class CarForm(forms.ModelForm):
+ 
+    class Meta:
+        model = Car
+        fields = ['name', 'car_img']
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+we have to create a html file for uploading the images.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car_image</title>
+</head>
+<body>
+    <form method = "post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+from django.http import HttpResponse
+from django.shortcuts import render, redirect
+from .forms import CarForm
+from .models import Car
+
+
+
+
+# Create your views here.
+ 
+ 
+def car_image_view(request):
+    if request.method == 'POST':
+        form = CarForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            form.save()
+            return redirect('success')
+    else:
+        form = CarForm()
+    return render(request, 'demo1.html', {'form': form})
+
+
+def success(request):
+    return HttpResponse('successfully uploaded')
+
+
+
+
+
+whenever the car_image_view hits and that request is POST, 
+we are creating an instance of model form form = CarForm(request.POST, request.FILES) 
+image will be stored under request.FILES one. If it is valid save into the database 
+and redirects to success url which indicates successful uploading of the image.
+
+
+
+
+
+
+
+
+
+
+
+
+from django.contrib import admin
+from django.urls import path
+from .views import car_image_view, success
+ 
+urlpatterns = [
+    path('image_upload', car_image_view, name='image_upload'),
+    path('success', success, name='success'),
+]
+
+
+
+
+
+
+
+
+
+
+Now make the migrations and run the server
+
+submit form
+
+Now in the project directory media directory will be created,
+an images directory will be created and the image will be stored under it. 
+
+
+
+Now we can write a view for accessing those images
+
+
+
+
+
+
+
+
+
+def display_car_images(request):
+        # getting all the objects of hotel.
+        cars = Car.objects.all()
+        return render(request, 'demo2.html', {'car_images': cars})
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Car Images</title>
+
+</head>
+<body>
+
+	{% for car1 in car_images %}
+			<div>
+					{{ car1.name }}
+					<img src="{{ car1.car_img.url }}" style="width: 150px;" />
+			</div>
+	{% endfor %}
+
+</body>
+</html>
+
+Insert the url path in the urls.py file
+
+# urls.py
+path('car_images/', car_images, name = 'car_images'),
+

@@ -1,0 +1,29 @@
+1.Simple version:
+------------------
+assert conditional_expression
+AssertioError
+
+
+2. Augmented Version:
+------------------
+assert conditional_expression, message
+x = 10 
+
+
+assert x > 10 , 'Here 10 value should be greater than 10 but not'
+
+
+print(x)
+-----------------
+run command if wants to exclude assertions
+-----------------
+
+
+def square(x):
+	return x*x
+assert sqaure(2)==4 , 'The square of 2 should be 4'
+assert square(3)==6 , 'The square of 3 should be 9'
+
+print(sqaure(2))
+print(sqaure(3))
+

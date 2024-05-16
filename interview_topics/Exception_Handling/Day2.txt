@@ -1,0 +1,58 @@
+The try-finally Clause
+
+You can use a finally: block along with a try: block. 
+The finally block is a place to put any code that must execute, whether the try-block raised an exception or not.
+Mostly use to release resources and close connections to file/database 
+
+
+Syntax:
+
+try:
+   You do your operations here
+   Due to any exception, this may be skipped.
+
+finally:
+   This would always be executed.
+
+
+*****************************************************************************
+
+
+try:
+   You do your operations here
+   
+except:
+   If there is any exception, then execute this block.
+
+finally:
+   This would always be executed. 
+
+
+***************************************************************************
+
+
+try:
+   You do your operations here
+   
+except :
+   If there is any exception, then execute this block.
+
+else:
+   If there is no exception then execute this block. 
+
+finally:
+   This would always be executed. 
+
+
+
+
+
+***************************************************************************
+raise:  The raise keyword is used to raise an exception.
+	You can define what kind of error to raise, and the text to print to the user.
+***************************************************************************
+
+
+
+return scenario
+

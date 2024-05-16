@@ -1,0 +1,28 @@
+menu:
+
+1.Add Student
+2.show Student Info
+3.update Student Info
+4.Delete Info
+5.Exit
+
+
+2.
+1.Show all Student Info
+2.Show Particular Student Info
+3.Show students who failed in math/english/physics/chemistry
+4.Back to Main Menu
+
+3.
+What do you wants To Update
+1.First name
+2.Last name
+3.Subject Name
+4.Marks
+5.Back to Main menu
+
+
+4.
+1.All Records
+2.Single Record
+3.Back to main Menu

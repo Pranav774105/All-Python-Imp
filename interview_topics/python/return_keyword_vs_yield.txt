@@ -1,0 +1,34 @@
+https://www.youtube.com/watch?v=YDUwur5n598
+
+https://www.geeksforgeeks.org/difference-between-yield-and-return-in-python/
+
+
+
+
+YIELD
+
+Yield is generally used to convert a regular Python function into a generator.
+
+It replace the return of a function to suspend its execution without destroying local variables.
+
+Code written after yield statement execute in next function call.
+
+It can run multiple times.
+
+
+Yield statement function is executed from the last state from where the function get paused.
+
+
+
+
+RETURN
+
+Return is generally used for the end of the execution and “returns” the result to the caller statement.
+
+It exits from a function and handing back a value to its caller.
+
+code written after return statement wont execute.
+
+It only runs single time.
+
+Every function calls run the function from the start.

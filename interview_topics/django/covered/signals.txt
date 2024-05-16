@@ -1,0 +1,112 @@
+from django.contrib.auth.signals import user_logged_in, \
+    user_logged_out, \
+    user_login_failed
+from django.contrib.auth.models import User
+from django.dispatch import receiver
+from django.db.models.signals import pre_save, post_save
+
+'''
+
+@receiver(user_logged_in, sender=User)
+def login_success(sender, request, user, **kwargs):
+    print('----------------------')
+    print('Logged in signal...')
+    print('sender:', sender)
+    print('request:', request)
+    print('user:', user)
+    print('kwargs:', kwargs)
+    print('\n' * 10)
+
+
+# user_logged_in.connect(login_success, sender=User)
+
+
+@receiver(user_login_failed)
+def login_success(sender, credentials, request, **kwargs):
+    print('----------------------')
+    print('Logged in fail signal...')
+    print('sender:', sender)
+    print('request:', request)
+    print('credentials:', credentials)
+    print('kwargs:', kwargs)
+    print('\n' * 10)
+
+
+# user_logged_in.connect(login_success, sender=User)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@receiver(pre_save, sender=User)
+def at_beginning_save(sender, instance, **kwargs):
+    print('*******************************')
+    print('pre save signal')
+    print('sender:', sender)
+    print('instance:', instance)
+    print('kwargs:', kwargs)
+    print('\n'*10)
+
+
+
+@receiver(post_save, sender=User)
+def at_ending_save(sender, instance, created, **kwargs):
+    if created:
+        print('-------------------------')
+        print('Post save signal')
+        print('new record')
+        print('sender:', sender)
+        print('instance:', instance)
+        print('created:', created)
+        print('kwargs:', kwargs)
+        print('\n' * 10)
+    else:
+        print('***********************')
+        print('post save signal updated')
+        print('sender:', sender)
+        print('instance:', instance)
+        print('created:', created)
+        print('kwargs:', kwargs)
+        print('\n' * 10)
+'''
+
+
+
+apps.py
+
+from django.apps import AppConfig
+
+class BlogConfig(AppConfig):
+    default_auto_field = 'django.db.models.BigAutoField'
+    name = 'blog'
+
+    def ready(self):
+        import blog.signals
+
+
+
+
+
+__init__.py
+
+default_app_config = 'blog.apps.BlogConfig'

@@ -1,0 +1,168 @@
+1. Strings to Integers
+You are given a list of numeric strings.
+
+lis = ["1", "2", "3", "4", "5"]
+Write a list comprehension to convert all the string numbers to integers. Assume every element in the list can be converted into integers without error. Expected output:
+
+[1, 2, 3, 4, 5]
+
+2. Numbers greater than 10
+You are given a list of integers.
+
+lis = [1,5,13,4,16,7]
+Write a list comprehension to extract all integers in this list that are greater than 10. Expected output:
+
+[13, 16]
+
+3. Greater than 10 AND divisible by 3
+You are given a list of integers.
+
+lis = [1,12,13,14,15,2,3]
+Write a list comprehension to extract all integers in this list that are greater than 10 AND that are divisible by 3. Expected output:
+
+[12, 15]
+
+4. Adding 1 to even numbers only
+You are given a list of integers.
+
+lis = [1,2,4,5,7]
+Write a list comprehension that adds 1 to even numbers but keeps odd numbers as they are. Hint — use the ternary operator. Expected output:
+
+[1,3,5,5,7]
+
+5. Numbers containing digit 1
+Write a list comprehension that returns all numbers between 1 and 100 (inclusive) that contains the digit 1. Expected output:
+
+[1,10,11,12,13,14,15,16,17,18,19,21,31,41,51,61,71,81,91,100]
+
+6. Combining 2 lists
+You are given 2 lists of the same length — fruits and prices.
+
+fruits = ["apple", "orange", "pear"]
+prices = [4,5,6]
+Write a list comprehension to create a list of (fruit, price) tuples. Hint — use the zip function. Expected output:
+
+[("apple",4), ("orange",5), ("pear",6)]
+
+7. Sorting dictionary keys and values
+You are given a dictionary containing fruits and numbers.
+
+d = {"apple":5, "orange":2, "pear":7, "durian":6}
+Each number represents the price of the fruit. Write a list comprehension that sorts this dictionary by price. Hint — use the sorted function. Expected output:
+
+[("orange",2), ("apple",5), ("durian",6), ("pear",7)]
+
+8. Combinations from 2 lists
+You are given 2 lists fruits and recipes.
+
+fruits = ["apple", "orange", "pear"]
+recipes = ["pie", "juice"]
+Write a list comprehension that generates all combinations across fruits and recipes. Hint — you need a nested for loop. Expected output:
+
+[
+    ("apple", "pie"), ("apple", "juice"),
+    ("orange", "pie"), ("orange", "juice"),
+    ("pear", "pie"), ("pear", "juice")
+]
+
+9. Unique combinations of 2 numbers that add up to a multiple of 3
+You are given 1 list of integers.
+
+lis = [1,6,2,4,7]
+Find all unique combinations of 2 numbers inside this list that add up to a multiple of 3. Hint — once again, you need to use a nested for loop. Expected output:
+
+[(1,2), (2,4), (2,7)]
+
+10. Converting storage space to integers
+You are given a list of strings representing storage space.
+
+lis = ["128GB", "256GB", "512GB", "1TB"]
+Write a list comprehension to convert these storage spaces into integers (in terms of GB). Note — 1 TB is equal to 1024 GB. Assume that the list only contains the units GB and TB. Expected output:
+
+[128, 256, 512, 1024]
+
+**************************************************************************
+1. Given a list of numbers, remove all odd numbers from the list:
+
+numbers = [3,5,45,97,32,22,10,19,39,43]
+
+2. Find all of the numbers from 1-1000 that are divisible by 7
+
+3. Count the number of spaces in a string . s = 'aa bb cc'
+
+4. Find all of the words in a string that are less than 4 letters l = ['pppp', 'aaa', 'bbb', 'cccc', 'ddd']
+
+5. Create a list from the elements of a range from 1200 to 2000 with steps of 130, using list comprehension.
+
+6. Use list comprehension to contruct a new list but add 6 to each item. lst1=[44,54,64,74,104]
+
+7. Using list comprehension, construct a list from the squares of each element in the list, if the square is greater than 50.  lst1=[2, 4, 6, 8, 10, 12, 14]
+
+8. Given dictionary is consisted of vehicles and their weights in kilograms. 
+Contruct a list of the names of vehicles with weight below 5000 kilograms. In the same list comprehension make the key names all upper case.
+
+dict={"Sedan": 1500, "SUV": 2000, "Pickup": 2500, "Minivan": 1600, "Van": 2400, "Semi": 13600, "Bicycle": 7, "Motorcycle": 110}
+
+9.     l = ['m', 'na', 'i','ke']
+       l1 = ['y','me','s','lly']
+output:
+l = ['my','name','is','kelly']
+
+
+10.  l = [1,2,3,4]
+    l1 = ['one','two','three','four']
+
+	d = {1:'one', 2:'two', 3:'Three', 4:'Four'}
+
+
+11.     state = ['Gujarat', 'Maharashtra', 'Rajasthan']
+	capital = ['Gandhinagar', 'Mumbai', 'Jaipur']
+Output Dictionary using for loop: {'Gujarat': 'Gandhinagar',
+                                   'Maharashtra': 'Mumbai', 
+                                   'Rajasthan': 'Jaipur'}
+  
+**************************************************************************************************************
+fruits = ['mango', 'kiwi', 'strawberry', 'guava', 'pineapple', 'mandarin orange']
+
+numbers = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 17, 19, 23, 256, -8, -4, -2, 5, -9]
+
+# Example for loop solution to add 1 to each number in the list
+numbers_plus_one = []
+for number in numbers:
+    numbers_plus_one.append(number + 1)
+
+# Example of using a list comprehension to create a list of the numbers plus one.
+numbers_plus_one = [number + 1 for number in numbers]
+
+# Example code that creates a list of all of the list of strings in fruits and uppercases every string
+output = []
+for fruit in fruits:
+    output.append(fruit.upper())
+    
+# Exercise 1 - rewrite the above example code using list comprehension syntax. Make a variable named uppercased_fruits to hold the output of the list comprehension. Output should be ['MANGO', 'KIWI', etc...]
+
+# Exercise 2 - create a variable named capitalized_fruits and use list comprehension syntax to produce output like ['Mango', 'Kiwi', 'Strawberry', etc...]
+
+# Exercise 5 - make a list that contains each fruit with more than 5 characters
+
+# Exercise 6 - make a list that contains each fruit with exactly 5 characters
+
+# Exercise 7 - Make a list that contains fruits that have less than 5 characters
+
+# Exercise 8 - Make a list containing the number of characters in each fruit. Output would be [5, 4, 10, etc... ]
+
+# Exercise 9 - Make a variable named fruits_with_letter_a that contains a list of only the fruits that contain the letter "a"
+
+# Exercise 10 - Make a variable named even_numbers that holds only the even numbers 
+
+# Exercise 11 - Make a variable named odd_numbers that holds only the odd numbers
+
+# Exercise 12 - Make a variable named positive_numbers that holds only the positive numbers
+
+# Exercise 13 - Make a variable named negative_numbers that holds only the negative numbers
+
+# Exercise 15 - Make a variable named numbers_squared that contains the numbers list with each element squared. Output is [4, 9, 16, etc...]
+
+# Exercise 16 - Make a variable named odd_negative_numbers that contains only the numbers that are both odd and negative.
+
+# Exercise 17 - Make a variable named numbers_plus_5. In it, return a list containing each number plus five. 

@@ -1,0 +1,21 @@
+1.Creation:
+list = []
+tuple = () parenthesis are not necessary in case of tuple --> 1, 2, 3
+
+2.Mutability
+
+list --> mutable
+tuple --> immutable
+
+3.Memory Consumption
+print([1, 2, 3].__sizeof__()) --> more
+print((1, 2, 3).__sizeof__()) --> less
+
+4.Comprehension
+list support comrehension
+tuple do not
+
+
+Tuples are faster than list
+we store such data in tuple that we are never going to change
+for ex. ('a', 'e', 'i', 'o', 'u')  --> vowels

@@ -1,0 +1,60 @@
+What is HTML?
+
+HTML stands for Hyper Text Markup Language is the standard language for creating Web pages.
+HTML describes the structure of a Web page.
+
+
+Tim Berners-Lee is known as the father of HTML. The latest version of HTML is HTML5
+
+HyperText simply means "Text within Text." A text has a link within it, is a hypertext. 
+	Whenever you click on a link which brings you to a new webpage, you have clicked on a hypertext. 
+	HyperText is a way to link two or more web pages (HTML documents)with each other.
+
+
+
+
+HTML Tags --> 142
+	HTML tags are like keywords which defines that how web browser will format and display the content. 
+
+HTML Attribute  --> 170
+	HTML attributes are special words which provide additional information about the tags.
+
+What is an HTML Element?
+	An HTML element is defined by a start tag, some content, and an end tag:
+
+	<tagname> Content goes here... </tagname>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html> element is the root element of an HTML page
+<head> element contains meta information about the HTML page
+<title> element specifies a title for the HTML page
+<body> element defines the document's body, and is a container for all the visible contents
+
+
+case insensitive
+head
+body
+title
+h1, h2, h3, h4, h5, h6
+p
+comments <!--      -->
+a --> href, target
+br
+hr
+table 
+label --> for , id, name
+form
+center
+submit
+reset

@@ -1,0 +1,23 @@
+
+
+
+
+
+
+1. Palindrome. 
+2. Add elements of both list and create new list. Using list comprehension. 
+3. Narcissist Number
+4. Sort values of dictionary in a list. 
+5. Call constructor of parent class.
+6. Prime Number
+7. Fibonacci Number
+8. l =[a, d, c, v, h, a, d, c]
+Create list having duplicates only. 
+9. Count of each alphabet in 'success'
+10. Define models for attendance system of school. 
+11. Find highest possible product of three numbers from a list. 
+12. Get second highest number from the list. 
+13. Set intersection
+
+
+

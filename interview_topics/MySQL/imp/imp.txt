@@ -1,0 +1,8 @@
+ACID properties
+sequence of query execution
+stored procedure
+https://www.javatpoint.com/mysql-data-types
+trigger
+where vs having
+sql interview questions
+normalization

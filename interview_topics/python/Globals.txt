@@ -1,0 +1,58 @@
+globals() function in Python returns the dictionary of current global symbol table.
+
+Symbol table: Symbol table is a data structure which contains all necessary information about the program. 
+These include variable names, functions, classes, etc.
+Global symbol table stores all information related to the global scope of the program, 
+and is accessed in Python using globals() function.
+
+The functions, variables which are not associated with any class or function are stored in global scope.
+
+Syntax: globals()
+
+Parameters: No parameters required.
+Code #1:
+
+
+# Python3 program to demonstrate global() function
+  
+# global variable
+a = 5
+  
+def func():
+    c = 10
+    d = c + a
+      
+    # Calling globals()
+    globals()['a'] = d
+    print (d)
+      
+# Driver Code    
+func()
+Output:
+
+15
+
+Code #2:
+
+
+# Python3 program to demonstrate global() function
+  
+# global variable
+name = 'gautam'
+  
+print('Before modification:', name)
+  
+# Calling global()
+globals()['name'] = 'gautam karakoti'
+print('After modification:', name)
+Output:
+
+Before modification: gautam
+After modification: gautam karakoti
+Note: We can also change the value of global variables by using globals() function. The changed value also updated in the symbol table.
+
+a = 100
+def foo():
+    globals()['a']=50
+foo()
+print(a)

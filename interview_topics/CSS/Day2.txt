@@ -1,0 +1,15 @@
+float:left;
+clear: both;
+
+
+navbar 
+display : inline-block
+login form
+
+
+overflow: -- hidden, scroll, auto
+
+opacity
+
+icons
+50%

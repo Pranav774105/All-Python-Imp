@@ -1,0 +1,104 @@
+Super is used to call parent class methods and static variables.
+if more than one parent then super call will go to second parent
+********************************************************************************
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def display(self):
+        print('Name :', self.name)
+        print('Age :', self.age)
+
+        
+class Student(Person):
+    def __init__(self, name, age, roll, marks):
+        super().__init__(name, age)
+        self.roll = roll
+        self.marks = marks
+
+    def display(self):
+        super().display()
+        print('Roll Number :', self.roll)
+        print('Marks :', self.marks)
+
+
+class Teacher(Person):
+    def __init__(self, name, age, salary, subject):
+        super().__init__(name, age)
+        self.salary = salary
+        self.subject = subject
+
+    def display(self):
+        super().display()
+        print('Salary is :', self.salary)
+        print('Subject is :', self.subject)
+
+
+s = Student('abc', 21, 202, 30.30)
+s.display()
+print('*'*20)
+
+t = Teacher('bbc', 22, 200000, 'math')
+t.display()
+
+********************************************************
+class A:
+    def m1(self):
+        print('A class method')
+
+
+class B(A):
+    def m1(self):
+        print('B class method')
+
+
+class C(B):
+    def m1(self):
+        print('C class method')
+
+
+class D(C):
+    def m1(self):
+        print('D class method')
+
+
+class E(D):
+    def m1(self):
+        print('E class method')
+        super(C, self).m1()
+
+e = E()
+e.m1()
+
+****************************************************************************************
+
+class P:
+    def __init__(self):
+        print('Parent constructor')
+
+    def m1(self):
+        print('Parent instance method')
+
+    @classmethod
+    def m2(cls):
+        print('Parent class method')
+
+    @staticmethod
+    def m3():
+        print('Parent class static method')
+
+
+class C(P):
+    def method1(self):
+        super().__init__()
+        super().m1()
+        super().m2()
+        super().m3()
+
+
+c = C()
+c.method1()
+
+************************************************************************************
+

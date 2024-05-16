@@ -1,0 +1,146 @@
+1. Write a C program to input electricity unit charges and calculate total electricity bill according to the given condition:
+For first 100 units Rs. free
+For next 101 - 200 units Rs. 5/unit
+For above 200 units Rs. 10/unit
+
+
+***************************************************
+
+2. Write a python program to check whether a number is divisible by 5 and 11 or not.
+****************************************************
+
+3. Write a  program to accept a coordinate point in a XY coordinate system 
+and determine in which quadrant the coordinate point lies. Go to the editor
+Test Data : 7 9
+Expected Output :
+The coordinate point (7,9) lies in the First quadrant.
+*****************************************************
+
+4. Write a C program to read roll no, name and marks of three subjects and calculate the total, percentage and division. Go to the editor
+Test Data :
+Input the Roll Number of the student :784
+Input the Name of the Student :James
+Input the marks of Physics, Chemistry and Computer Application : 70 80 90
+
+
+Expected Output :
+Roll No : 784
+Name of Student : James
+Marks in Physics : 70
+Marks in Chemistry : 80
+Marks in Computer Application : 90
+Total Marks = 240
+Percentage = 80.00
+Division = First
+***********************************************************
+
+5.Write a C program to check whether a triangle can be formed by the given value for the angles. Go to the editor
+Test Data :
+40 55 65
+Expected Output :
+The triangle is not valid.
+***********************************************************
+
+6. Write a C program to check whether an alphabet is a vowel or consonant. Go to the editor
+Test Data :
+k
+Expected Output :
+The alphabet is a consonant.
+***********************************************************
+
+7. Write a C program to calculate profit and loss on a transaction. Go to the editor
+Test Data :
+500 700
+Expected Output :
+You can booked your profit amount : 200
+************************************************************
+
+8.A year is a leap year if the following conditions are satisfied: 
+The year is multiple of 400.
+The year is multiple of 4 and not multiple of 100.
+***********************************************************
+
+9. Write a program in C to read any Month Number in integer and display Month name in the word
+************************************************************
+
+
+
+
+
+
+
+
+
+
+
+Q1. Write a program to accept the cost price of a bike and display the 
+road tax to be paid according to the following criteria :
+    
+        Cost price (in Rs)                                       Tax
+        > 100000                                                  15 %
+        > 50000 and <= 100000                          		  10%
+        <= 50000                                                  5%
+
+*******************************************************
+Q2. A year is a leap year if the following conditions are satisfied: 
+
+The year is multiple of 400.
+The year is multiple of 4 and not multiple of 100.
+*******************************************************
+Q3. Accept the age of 4 people and display the youngest one?
+*******************************************************
+Q4.  Accept the following from the user and calculate the percentage of class attended:
+
+a.     Total number of working days
+
+b.     Total number of days for absent
+
+    After calculating percentage show that, If the percentage is less than 75, 
+than student will not be able to sit in exam.
+******************************************************
+Q5. A company decided to give bonus to employee according to following criteria:
+
+    Time period of Service                Bonus
+
+    More than 10 years             10%
+
+    >=6 and <=10                   8%
+
+    Less than 6 years              5%
+
+    Ask user for their salary and years of service and print the net bonus amount.
+
+****************************************************************
+Q6.  Accept three sides of a triangle and check whether it is an equilateral, isosceles or scalene triangle.
+
+Note :
+
+An equilateral triangle is a triangle in which all three sides are equal.
+
+A scalene triangle is a triangle that has three unequal sides.
+
+
+ 
+An isosceles triangle is a triangle with (at least) two equal sides.
+
+***************************************************************************
+Q7. Accept the age, sex (‘M’, ‘F’), number of days and display the wages accordingly
+
+Age		Sex	Wage/day
+>=18 and <30	M	700
+		F	750
+>=30 and <=40	M	800
+		F	850
+If age does not fall in any range then display the following message: “Enter appropriate age”
+************************************************************************
+
+Q8.  Accept the number of days from the user and calculate the charge for library according to following:
+
+Till five days : Rs 2/day.
+
+Six to ten days  : Rs 3/day.
+
+11 to 15 days  : Rs 4/day
+
+After 15 days    : Rs 5/day
+************************************************************************

@@ -1,0 +1,38 @@
+3. AUTO_INCREMENT - Auto-increment allows a unique number to be generated automatically when a new record is inserted into a table.
+
+	18. create table tbl_name(field1 int auto_increment primary key);
+
+4. DEFAULT - Sets a default value for a column if no value is specified
+
+	19. create table tbl_name (field1 datatype1 default 'value');
+
+5. PRIMARY KEY - A combination of a NOT NULL and UNIQUE. 
+		 Uniquely identifies each row in a table
+		 One table can contain only one primary key
+	20. create table tbl_name (field1 datatype1 primary key, field2 datatype2 .....);
+	
+
+6. FOREIGN KEY - It is also called as referencing key.
+		It is used to link two or more table.
+		one table can have many foreign keys.
+		Forignkey from one table takes the reference of primary key present in another table 
+		The table with the foreign key is called the child table, and the table with the primary key is called the parent table.
+	21. create table tbl_name (field1 datatype1, field2 datatype2, foreign key(fk_field_name) references primary_key_tbl_name(primary_key));
+		
+7. Check - 
+	create table tbl_name(field1 int check(field > value));
+
+
+
+
+
+Relationship in tables:
+1:1 --> one to one  --> (person --> adhar)
+1:N --> one to many --> (father --> sons)
+M:N --> many to many --> (author --> book --> author_book)  author_book --> bridge/junction table author_book
+
+
+
+to clear screen --> SYSTEM CLS;  
+date format     --> 'YYYY-MM-DD' 
+

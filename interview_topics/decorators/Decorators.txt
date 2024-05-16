@@ -1,0 +1,98 @@
+Decorators are used to extend the functionality of code without changing it structure.
+
+Decorators allow us to wrap another function in order to extend the behaviour of the wrapped function, without permanently modifying it. 
+
+
+First Class Objects:
+In Python, functions are first class objects which means that functions in Python can be used or passed as arguments.
+
+Properties of first class object:
+
+You can store the function in a variable.
+You can pass the function as a Argument to another function.
+You can return the function from a function.
+You can store them in data structures such as dict, lists, …
+
+
+
+
+*******************************
+def outer(f1):
+	def inner():
+		print('*'*10)
+		f1()
+		print('*'*10)
+	return inner
+
+
+def m1():
+	print('Hello')
+#m1 = outer(m1)
+m1()
+
+
+
+
+********************************
+def smart_div(f1):
+	def inner(a, b):
+		if b == 0:
+			return 'Can\'t divide'
+		else:
+			return f1(a, b)
+
+	return inner
+
+def div(a, b):
+	result = a/b
+	return result
+div = smart_div(div)
+print(div(10, 2))
+
+
+**********************************
+
+def discount(fun):
+    def inner(para):
+        return sum(para) - fun(para)*0.10 
+    return inner
+
+my_list = [10, 20, 30]
+
+##@discount
+def m1(list1):
+    return(sum(my_list))
+##m1 = outer(m1)
+print(m1(my_list))
+
+
+**********************************
+
+
+reverse string
+
+def reverse_string(param):# param --> upper_string
+    def inner(string):# string --> 'abcd'
+        result = param(string)
+        return result[::-1]
+    return inner
+
+
+##@reverse_string
+def upper_string(string):
+    res = string.upper()
+    return res
+
+##upper_string = reverse_string(upper_string)# upper_string --> inner
+print(upper_string('abcd'))# inner('abcd')
+
+
+
+
+
+
+
+
+
+
+

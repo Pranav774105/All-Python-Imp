@@ -1,0 +1,76 @@
+Python Closures are these inner functions that are enclosed within the outer function. Closures can access variables present in the outer function scope. 
+It can access these variables even after the outer function has completed its execution.
+
+To get a better understanding of closures, let’s first see how scope works in nested functions.
+
+Scope of Variables in Nested Functions
+In Python nested functions, the enclosed function can access variables of the enclosing scope.
+
+Let’s understand this better with an example –
+
+
+def outer(name):
+    # this is the enclosing function
+    def inner():
+        # this is the enclosed function
+        # the inner function accessing the outer function's variable 'name'
+        print(name)
+    inner()
+# call the enclosing function
+outer('TechVidvan')
+Output
+
+TechVidvan
+
+Let’s break this code down.
+
+When the outer function gets called, the variable ‘name’ gets the value ‘TechVidvan’. The inner function can access the value of this variable. 
+When the inner function gets called, ‘Techvidvan’ gets printed. This is how scope works in nested functions.
+
+The bottom line is (and it’s worth repeating) – “Enclosed functions can access the variables of enclosing functions.”
+
+Keeping this in mind, let’s move on to Python closures.
+
+Python Closures
+In the example above, we have called the inner function inside the outer function. 
+The inner function becomes a closure when we return the inner function instead of calling it.
+
+So we have a closure in Python if-
+
+We have a nested function, i.e. function within a function
+The nested function refers to a variable of the outer function
+The enclosing function returns the enclosed function
+For Example
+
+def outer(name):
+    # this is the enclosing function
+    def inner():
+        # this is the enclosed function
+        # the inner function accessing the outer function's variable 'name'
+        print(name)
+    return inner
+# call the enclosing function
+myFunction = outer('TechVidvan')
+myFunction()
+Output
+
+
+‘TechVidvan’
+
+Here, the call to outer function returns the inner function. This then gets assigned to ‘myFunction’. Now when we call myFunction, it prints ‘TechVidvan’ (which was earlier given as an argument to outer).
+
+Do you see what just happened here? Even after ‘outer’ finishes its execution and all its variables go out of scope, the value passed to its argument is still remembered.
+
+This is the beauty of closures! We can access the values of a function that no longer exists. You might be thinking that closure and all seems fine, but why on Earth will I ever use it?
+
+
+When and Why do you need to use Closures in Python?
+You can use closures –
+
+To replace the unnecessary use of class: Suppose you have a class that contains just one method besides the __init__ method. 
+In such cases, it is often more elegant to use a closure instead of a class.
+To avoid the use of the global scope: If you have global variables which only one function in your program will use, think closure. 
+Define the variables in the outer function and use them in the inner function.
+To implement data hiding: The only way to access the enclosed function is by calling the enclosing function. 
+There is no way to access the inner function directly.
+To remember a function environment even after it completes its execution: You can then access the variables of this environment later in your program.

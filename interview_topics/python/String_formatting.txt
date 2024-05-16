@@ -1,0 +1,60 @@
+String formatting is the process of infusing things in the string dynamically and presenting the string. 
+There are four different ways to perform string formatting:-
+
+Formatting with % Operator.
+Formatting with format() string method.
+Formatting with string literals, called f-strings.
+Formatting with String Template Class
+
+*************************************
+
+Formatting string using % Operator
+It is the oldest method of string formatting. 
+Here we use the modulo % operator. The modulo % is also known as the “string-formatting operator”.
+
+x = 'looked'
+print("Misha %s and %s around"%('walked',x))
+
+‘%s’ is used to inject strings similarly ‘%d’ for integers, ‘%f’ for floating-point values, ‘%b’ for binary format. 
+For all formats, conversion methods visit the official documentation.
+Float precision with the placeholder method:
+Floating-point numbers use the format %a.bf. Here, a would be the minimum number of digits to be present in the string; 
+these might be padded with white space if the whole number doesn’t have this many digits. Close to this, bf represents how many digits are to be displayed after the decimal point. 
+
+Let us see a few examples:
+
+Example 1: Float point precision using % operator
+
+
+print('The value of pi is: %5.4f' %(3.141592))  # 5 reserved places . 4 digits after decimal points
+
+
+***************************************************
+
+
+Formatting string using format() method
+Format() method was introduced with Python3 for handling complex string formatting more efficiently. 
+Formatters work by putting in one or more replacement fields and placeholders defined by a pair of curly braces { } into a string and calling the str.format(). 
+The value we wish to put into the placeholders and concatenate with the string passed as parameters into the format function. 
+
+Syntax: ‘String here {} then also {}’.format(‘something1′,’something2’)
+
+Example: Formatting string using format() method
+
+
+print('We all are {}.'.format('equal'))
+
+*************************************************************************
+
+Formatted String using F-strings
+
+To create an f-string, prefix the string with the letter “ f ”. 
+The string itself can be formatted in much the same way that you would with str.format(). 
+F-strings provide a concise and convenient way to embed python expressions inside string literals for formatting.
+
+Example: Formatting string with F-Strings
+
+
+name = 'Ele'
+ 
+print(f"My name is {name}.")

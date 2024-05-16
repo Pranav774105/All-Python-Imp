@@ -1,0 +1,198 @@
+Object Relational Mapper(ORM tool)
+
+SQLAlchemy is an ORM tool which establishes the relationship between the objects and the tables of the relational databases.
+The mapping between the both is important because the python is capable of storing the data in the form of objects whereas 
+the database stores the data in the form of relational tables, i.e. the collection of rows and columns.
+The object-relational mapping is the technique of storing python objects into the database tables without writing the raw SQL queries.
+
+
+
+sqlalchemy:
+	Third Party Library not included in standard library provided by Python.
+	It facilitates the communication between Python programs and databases. Most of the times, this library is used as an Object Relational Mapper (ORM) tool 
+	that translates Python classes to tables on relational databases and automatically converts function calls to SQL statements.
+	The benefit of using this particular library is to allow Python developers to work with the language’s own objects, and not write separate SQL queries.
+***********************************************************************************************************************************
+
+
+
+
+
+
+
+
+
+***********************************************************************************************************************************
+Installation - 'pip install sqlalchemy'
+Verification - import sqlalchemy
+
+
+1.Mapping
+	Python Class --> Database Table
+	A)Classical Way of Mapping
+	B)Declarative Way of Mapping
+
+2.Functions instead of Lengthy & errorprone SQL quries
+	INSERT INTO..-->add()
+	UPDATE tab...-->update()
+	DELETE FROM..-->delete()
+	SELECT * FR..-->query()
+3.Python code in .py files No need to use SQL
+***********************************************************************************************************************************
+
+
+
+
+
+
+
+
+***********************************************************************************************************************************
+Classical Way of Mapping
+
+
+The “Classical” style is SQLAlchemy’s original mapping , whereas “Declarative” is the richer and more easy
+system that builds on top of “Classical”. 
+Both styles may be used interchangeably, as the end result of each is exactly the same
+
+
+
+1.Imports --> from sqlalchemy import *
+	  --> from sqlalchemy.orm import sessionmaker, registry
+	   
+
+2.Define Database URL--> DB_URL = 'db_type://user:pass@host:portNo/db_name'
+	
+
+3.Create Engine -->ENG = create_engine(DB_URL)
+	Create a new Engine class instance
+	an Engine, which the Session will use for connection resources
+
+4.Define Python Class 
+
+class ClassName:
+	def __init__(self, a, b, n):
+		self.a = a
+		self.b = b
+		self.n = n
+
+5.Create instance of MetaData-->md=MetaData()
+	MetaData is a container object that keeps together many different features of a database being described.
+	holds the no.of table, structures.
+
+6.Define Structure of Table in Database Using Table instance-->tb = Table('table_nm', md, COLUMNS*)
+	Represent a table in a database.
+
+    e.g.:
+
+        tb = Table(
+            "table_nm", metadata,
+            Column('table_id', Integer, primary_key=True),
+            Column('value', String(50))
+        )
+	
+
+	metadata: a MetaData object which will contain this table.
+	SQLAlchemy Column object represents a column in a database table 
+
+
+
+7.Map the py class with table in db-->reg_obj = registry()
+				      reg_obj.map_imperatively(Class, tb)
+
+	 Defines an association between a Python class and a database table , so that ORM operations against the class may proceed.
+
+8.Create Table in DB-->md.create_all(ENG)
+	Sqlalchemy create_all method is used to Create all tables stored in this metadata into the database. 
+	This method will first check whether the table exists in the database or not if suppose 
+	it has found an existing table it will not create any table.
+	
+***********************************************************************************************************************************       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+***********************************************************************************************************************************
+Declarative Way of Mapping
+
+Making use of the Declarative system, 
+the components of the user-defined class as well as the Table to which the class is mapped are defined at once:
+
+
+1.Imports
+2.Define Database URL--> DB_URL = 'db_type://user:pass@host:portNo/db_name'
+3.Create Engine-->ENG = create_engine(DB_URL)
+4.Get Base Class --> Base = declarative_base()
+	The declarative_base() base class contains a MetaData object where newly defined Table objects are collected.
+ 	
+5.Define Python Class Along with Structure of table.
+class ClassName(Base):
+    __tablename__ = 'tb_name'
+    field1 = Column(Integer, primary_key = True)
+    field2 = Column(String(60))
+    field3 = Column(Float)
+
+
+6.Create Table --> Base.metadata.create_all(ENG)
+***********************************************************************************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+***********************************************************************************************************************************
+CRUD Operations
+
+In the most general sense, the Session establishes all conversations with the database
+CREATE A SESSION OBJECT TO INITIATE QUERY IN DATABASE
+
+
+1. Session Class --> Session = sessionmaker(bind=ENG)
+		sessionmaker is class and Session is object of that class (__call__ present inside sessionmaker class) 
+		bind – An Engine to which this Session should be bound. When specified, all SQL operations performed by this session will execute.
+2. Instance of Session --> sess = Session()
+		as Session is callable object it returns object of Session class object
+
+a] INSERT --> sess.add(object)
+	      sess.add_all([obj1,obj2,obj3,...,objN])
+	      sess.commit()
+b] RETRIVE --> objs = sess.query(PythonClass).filter(PythonClass.field==val)
+	       for obj in objs:
+			print(obj)
+c] UPDATE --> sess.query(PythonClass).filter(CONDITION).update({PythonClass.Field:NewVal})
+		sess.commit()
+d] DELETE --> sess.query(PythonClass).filter(CONDITION).delete()
+		sess.commit()
+
+
+
+sess.close()
+***********************************************************************************************************************************

@@ -1,0 +1,5 @@
+When the database has foreign keys, using select_related() and prefetch_related() can reduce the number of database requests and improve performance
+
+https://django.how/views/select_related-prefetch_related/
+
+https://codesarray.com/view/Select-Related-in-Django

@@ -1,0 +1,28 @@
+
+Why is Python an interpreted language?
+
+
+Python is called an interpreted language because it goes through an interpreter, 
+which turns code you write into the language understood by your computer's processor.
+
+Source code[High level]--> compiler --> byte code --> Python Virtual Machine[interpreter] -->Machine code 
+
+
+
+The compilation part is hidden from the programmer thus
+The compilation part is done first when we execute our code and this will generate byte code and internally 
+this byte code gets converted by the python virtual machine(p.v.m) according to the underlying platform(machine+operating system).
+
+Now the question is – if there is any proof that python first compiles the program internally and then run the code via interpreter?
+The answer is yes! and note this compiled part is get deleted by the python(as soon as you execute your code) 
+just it does not want programmers to get into complexity.
+
+
+
+the extension .pyc is python compiler..
+
+Thus, it is proven that python programs are both compiled as well as interpreted!! but the compilation part is hidden from the programmer.
+how to complie python code 
+py -m py_compile filename
+
+to run it py filename.pyc

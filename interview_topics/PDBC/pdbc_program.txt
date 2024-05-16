@@ -1,0 +1,155 @@
+##PDBC  --> Python DataBase Connectivity
+
+import MySQLdb
+
+conn = MySQLdb.connect(user='root', password='root', host='127.0.0.1', db='b30pdbc')
+#print(conn, type(conn))
+
+curs = conn.cursor()
+#print(curs, type(curs))
+
+##curs.execute('show databases;')
+##for i in curs:
+##    print(i)
+    
+while True:
+    ch = int(input('\n\t***** MENU *****'\
+                   '\n\t1. CREATE TABLE'\
+                   '\n\t2. INSERT DATA'\
+                   '\n\t3. RETRIVE DATA'\
+                   '\n\t4. DELETE DATA'\
+                   '\n\t5. UPDATE DATA'\
+                   '\n\t6. EXIT'\
+                   '\n\tEnter Your Choice:'))
+
+##################### CREATE TABLE ############################
+	
+    if ch == 1:
+        query = 'create table student(rn int, name varchar(50), marks float);'
+        curs.execute(query)
+
+#################### INSERT DATA ###############################
+    elif ch == 2:
+        rn = int(input('Enter Roll Number:'))
+        nm = input('Enter Name:')
+        mark = float(input('Enter Marks:'))
+
+        query = f'insert into student values({rn}, "{nm}", {mark});'
+        curs.execute(query)
+
+    
+
+################### RETRIVE DATA ###############################
+    elif ch == 3:
+        ch1 = int(input('\nDo you want to Display:'\
+                        '\n1. ALL DATA'\
+                        '\n2. PARTICULAR RECORD'\
+                        '\nEnter your Choice:'))
+        ## ALL DATA RETRIVE
+        if ch1 == 1:
+            tbl_name = input('Enter Table Name:')
+
+            query = f'select * from {tbl_name};'
+            curs.execute(query)
+
+            for i in curs:
+                print(i)
+                
+        ## PARTICULAR DATA RETRIVE
+        elif ch1 == 2:
+            ch2 = int(input('\nThrough which parameter you want to retrive the Record:'\
+                            '\n1. ROLL'\
+                            '\n2. NAME'\
+                            '\n3. MARKS'\
+                            '\nEnter Your Choice:'))
+            ### PARTICULAR RETRIVAL by ROLL
+            if ch2 == 1:
+                rn_ref = int(input('Enter the REFERENCE ROLL No:'))
+
+                query = f'select * from student where rn = {rn_ref};'
+                curs.execute(query)
+                for i in curs:
+                    print(i)
+            ### PARTICULAR RETRIVAL by NAME
+            ### PARTICULAR TERTIVAL by MARKS
+
+######################## DELETE DATA ########################
+    elif ch == 4:
+        ch1 = int(input('Do you want to DELETE:'\
+                        '\n1. ALL RECORDS'\
+                        '\n2. PARTICULAR RECORD'\
+                        '\nEnter Your Choice:'))
+
+        ### ALL RECORDS DELETE
+        if ch1 == 1:
+            query = 'delete from student;'
+            curs.execute(query)
+
+        ### PARTICULAR RECORD DELETE
+        elif ch1 == 2:
+            ch2 = int(input('\nThrough which parameter you want to DELETE the Record:'\
+                            '\n1. ROLL'\
+                            '\n2. NAME'\
+                            '\n3. MARKS'\
+                            '\nEnter Your Choice:'))
+            ### DELETE by ROLL
+            if ch2 == 1:
+                rn_ref = int(input('Enter Reference Roll Number:'))
+
+                query = f'delete from student where rn = {rn_ref};'
+                curs.execute(query)
+            ### DELETE by NAME
+            ### DELETE by MARKS
+
+############################ UPDATE DATA ######################
+    elif ch == 5:
+        ch1 = int(input('\nWhat do you want to UPDATE?'\
+                        '\n1. ROLL'\
+                        '\n2. NAME'\
+                        '\n3. MARKS'\
+                        '\nENter Your Choice:'))
+
+        ### TO UPDATE ROLL
+        if ch1 == 1:
+            ch2 = int(input('\nThrough which parameter you want to UPDATE the Record:'\
+                            '\n1. ROLL'\
+                            '\n2. NAME'\
+                            '\n3. MARKS'\
+                            '\nEnter Your Choice:'))
+        
+            ### BY Roll Reference
+            if ch2 == 1:
+                roll = int(input('Enter the new ROLL to UPDATE:'))
+
+                rn_ref = int(input('Enter the REFERENCE ROLL Number:'))
+
+                query = f'update student set rn = {roll} where rn = {rn_ref};'
+
+                curs.execute(query)
+            ### By NAME REFERENCE
+            elif ch2 == 2:
+                roll = int(input('Enter the new ROLL to UPDATE:'))
+
+                nm_ref = input('Enter the REFERENCE NAME:')
+
+                query = f'update student set rn = {roll} where name = "{nm_ref}";'
+
+                curs.execute(query)
+            ### By MARKS REFERENCE
+            elif ch2 == 3:
+                roll = int(input('Enter the new ROLL to UPDATE:'))
+
+                mark_ref = float(input('Enter the REFERENCE MARKS:'))
+    
+                query = f'update student set rn = {roll} where marks = {mark_ref};'
+
+                curs.execute(query)
+
+####################################### TERMINATE LOOP ########################
+    elif ch == 6:
+        break
+    conn.commit()      
+
+        
+conn.close()        
+        

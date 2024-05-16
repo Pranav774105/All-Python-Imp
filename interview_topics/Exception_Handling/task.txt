@@ -1,0 +1,46 @@
+class HomoList(Exception):
+    pass
+
+def fun(number):
+    my_list = []       
+    for i in range(number):
+        com = eval(input('Enter your element'))
+        if not my_list:
+            my_list.append(com)
+        else:
+            if type(my_list[0]) == type(com):
+                my_list.append(com)
+            else:
+                raise HomoList('List should be homogeneous')
+    return my_list
+
+
+
+    
+num = int(input('total ele in list'))
+print(fun(num))
+
+
+***************************************************
+
+
+
+class HomoList(Exception):
+    pass
+
+def fun(number):
+    my_list = []       
+    for i in range(number):
+        com = eval(input('Enter your element'))
+        if not my_list:
+            my_list.append(com)
+        else:
+            if com not in my_list:
+                my_list.append(com)
+            else:
+                raise HomoList('list can contain qnique elem only')
+    return my_list
+
+  
+num = int(input('total ele in list'))
+print(fun(num))

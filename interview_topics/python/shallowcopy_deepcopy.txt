@@ -1,0 +1,25 @@
+# shallow copy
+##shallow copy creates a copy of the object but references each element of the object.
+import copy
+
+old_list = [1, 2, [3, 4], 5]
+
+new_list = copy.copy(old_list)
+
+print(new_list)
+
+print(id(old_list[2]))
+print(id(new_list[2]))
+
+
+# Deep copy
+## Deep copy creates a copy of the object and the elements of the object.
+old_list = [1, 2, [3, 4], 5]
+
+new_list = copy.deepcopy(old_list)
+
+print(new_list)
+
+print(id(old_list[2]))
+print(id(new_list[2]))
+

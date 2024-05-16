@@ -1,0 +1,59 @@
+Operator Overloading means giving extended meaning beyond their predefined operational meaning.
+
+
+print(1 + 2)
+
+print("1"+"2")
+
+
+How to overload the operators in Python? 
+
+
+Consider that we have two objects which are (user-defined data type) and we have to add two objects with binary ‘+’ operator it throws an error,
+because interpreter don’t know how to add two objects. 
+
+So we define a method for an operator and that process is called operator overloading.
+We can overload all existing operators but we can’t create a new operator. 
+
+To perform operator overloading, 
+Python provides some special method or magic method that is automatically invoked when it is associated with that particular operator. 
+
+For example, when we use + operator, the magic method __add__ is automatically invoked in which the operation for + operator is defined.
+
+
+
+class Book:
+    def __init__(self, x):
+        self.x = x
+
+    def __add__(self, other):
+        result = self.x + other.x
+        return result
+
+b1 = Book(10)
+b2 = Book(20)
+
+print(b1+b2)
+
+***********************************************************
+in case of multiple values
+class Book:
+    def __init__(self, x):
+        self.x = x
+
+    def __str__(self):
+        return f'result is {self.x}'
+
+    def __add__(self, other):
+        result = self.x + other.x
+        b =  Book(result)
+        return b
+
+b1 = Book(10)
+b2 = Book(20)
+b3 = Book(30)
+print(b1+b2+b3)
+
+*************************************************************
+
+

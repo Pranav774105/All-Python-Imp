@@ -1,0 +1,250 @@
+# Strings Tasks
+
+Exercise 1 : Convert uppercase to lowercase
+Given : str1 = 'ADHYAYAN'
+Expected Output: str2 = 'adhyayan'
+
+Exercise 2: Find the index position and occurance(count) of D in string
+Given : str1 ='ADHYAYAND'
+Expected output:
+index position = 1
+occurance = 2
+
+Exercise 3: Create a string made of the first and last character
+Given: str1 = "Adhyayan" 
+Expected Output: str2 = 'An'
+
+Exercise 4: Replace the String
+Given: str1 = 'I am Student'
+Expected Output: 'I am Software Developer'
+
+Exercise 5: Do perform addition of all digits present in string
+Given:
+str1 = "12345"
+Expected Outcome:
+addition of digit = 15
+
+Exercise 6: Arrange string characters such that lowercase letters should come first
+Given: str1 = 'ADHYayan'
+Expected Output:str2 = 'ayanADHY'
+
+
+
+
+
+
+
+Exercise 1A: Create a string made of the first, middle and last character
+Write a program to create a new string made of an input string’s first, middle, and last character.
+
+Given:
+str1 = "James"
+Expected Output:
+Jms
+**************************************************************
+Exercise 1B: Create a string made of the middle three characters
+Write a program to create a new string made of the middle three characters of an input string.
+
+
+Given:
+
+Case 1
+str1 = "JhonDipPeta"
+Output
+Dip
+
+Case 2
+str2 = "JaSonAy"
+Output
+Son
+****************************************************************
+Exercise 2: Append new string in the middle of a given string
+Given two strings, s1 and s2. Write a program to create a new string s3 by appending s2 in the middle of s1.
+
+Given:
+
+s1 = "Ault"
+s2 = "Kelly"
+
+Expected Output:
+AuKellylt
+*******************************************************************
+
+Exercise 3: Create a new string made of the first, middle, and last characters of each input string
+
+Given two strings, s1 and s2, write a program to return a new string made of s1 and s2’s first, middle, and last characters.
+
+Given:
+s1 = "America"
+s2 = "Japan"
+Expected Output:
+AJrpan
+*******************************************************************
+Exercise 4: Arrange string characters such that lowercase letters should come first
+Given string contains a combination of the lower and upper case letters. Write a program to arrange the characters of a string so that all lowercase letters should come first.
+
+Given:
+str1 = PyNaTive
+Expected Output:
+yaivePNT
+*******************************************************************
+Exercise 5: Count all letters, digits, and special symbols from a given string
+Given:
+
+str1 = "P@#yn26at^&i5ve"
+Expected Outcome:
+
+Total counts of chars, digits, and symbols 
+
+Chars = 8 
+Digits = 3 
+Symbol = 4
+
+*******************************************************************
+Exercise 6: Create a mixed String using the following rules
+Given two strings, s1 and s2. Write a program to create a new string s3 made of the first char of s1, then the last char of s2, Next, the second char of s1 and second last char of s2, and so on. Any leftover chars go at the end of the result.
+
+Given:
+s1 = "Abc"
+s2 = "Xyz"
+Expected Output:
+AzbycX
+*****************************************************************
+
+Exercise 7: String characters balance Test
+
+Write a program to check if two strings are balanced. For example, 
+strings s1 and s2 are balanced if all the characters in the s1 are present in s2.
+ The character’s position doesn’t matter.
+
+Given:
+
+Case 1:
+s1 = "Yn"
+s2 = "PYnative"
+Expected Output:
+
+True
+Case 2:
+s1 = "Ynf"
+s2 = "PYnative"
+Expected Output:
+
+False
+
+*******************************************************************************
+Exercise 8: Find all occurrences of a substring in a given string by ignoring the case
+Write a program to find all occurrences of “USA” in a given string ignoring the case.
+
+Given:
+str1 = "Welcome to USA. usa awesome, isn't it?"
+Expected Outcome:
+
+The USA count is: 2
+
+******************************************************************************
+Exercise 9: Calculate the sum and average of the digits present in a string
+Given a string s1, write a program to return the sum and average of the digits that appear in the string, ignoring all other characters.
+
+Given:
+
+str1 = "PYnative29@#8496"
+Expected Outcome:
+
+Sum is: 38 Average is  6.333333333333333
+
+******************************************************************************
+Exercise 10: Write a program to count occurrences of all characters within a string
+Given:
+str1 = "Apple"
+Expected Outcome:
+
+{'A': 1, 'p': 2, 'l': 1, 'e': 1}
+
+******************************************************************************
+Exercise 11: Reverse a given string
+Given:
+
+str1 = "PYnative"
+Expected Output:
+evitanYP
+
+******************************************************************************
+Exercise 12: Find the last position of a given substring
+Write a program to find the last position of a substring “Emma” in a given string.
+
+Given:
+
+str1 = "Emma is a data scientist who knows Python. Emma works at google."
+Expected Output:
+
+Last occurrence of Emma starts at index 43
+
+*********************************************************************************
+
+Exercise 13: Split a string on hyphens
+Write a program to split a given string on hyphens and display each substring.
+
+Given:
+
+str1 = Emma-is-a-data-scientist
+Expected Output:
+Displaying each substring
+
+Emma
+is
+a
+data
+scientist
+************************************************************************
+Exercise 14: Remove False values from a list of strings
+Given:
+
+str_list = ["Emma", "Jon", "", "Kelly", None, "Eric", ""]
+Expected Output:
+
+Original list of sting
+['Emma', 'Jon', '', 'Kelly', None, 'Eric', '']
+
+After removing empty strings
+['Emma', 'Jon', 'Kelly', 'Eric']
+
+
+Exercise 15: Remove special symbols / punctuation from a string
+Given:
+
+str1 = "/*Jon is @developer & musician"
+Expected Output:
+
+"Jon is developer musician"
+******************************************************************
+
+Exercise 16: Removal all characters from a string except integers
+Given:
+
+str1 = 'I am 25 years and 10 months old'
+Expected Output:
+
+2510
+
+
+Exercise 17: Find words with both alphabets and numbers
+Write a program to find words with both alphabets and numbers from an input string.
+
+Given:
+
+str1 = "Emma25 is Data scientist50 and AI Expert"
+Expected Output:
+
+Emma25
+scientist50
+
+***************************************************************************
+
+Exercise 18: Replace each special symbol with # in the following string
+Given:
+
+str1 = '/*Jon is @developer & musician!!'
+Expected Output:
+
+##Jon is #developer # musician##

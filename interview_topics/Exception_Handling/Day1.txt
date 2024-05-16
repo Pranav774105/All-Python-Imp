@@ -1,0 +1,87 @@
+There are mainly three kinds of errors in Python:
+
+1.Syntax errors
+2.Logical errors
+3.Exceptions
+
+
+
+1. Syntax errors :
+	Are similar to grammar or spelling errors in a Language. If there is such an error in your code, 
+	Python cannot start to execute your code.
+	Missing symbols (such as comma, bracket, colon), misspelling a keyword, 
+	having incorrect indentation are common syntax errors in Python.
+
+2. Logical errors:
+	Are the most difficult errors to fix as they don’t crash your code and you don’t get any error message.
+	If you have logical errors, your code does not run as you expected.
+	
+
+3. Exception: 
+	An exception is an event, which occurs during the execution 
+	of a program that disrupts the normal flow of the program.
+
+
+ex. ValueError, ZeroDivisionError, TypeError, NameError, IndexError
+
+
+
+
+
+
+
+
+
+Handling an exception:
+	Exception handling is responding to exceptions when a computer program runs.
+	Examples include a user providing abnormal input, a file system error being encountered when trying to read or write a file, or a program attempting to divide by zero.
+	Exception handling attempts to gracefully handle these situations so that a program does not crash.
+	
+	
+Importance of exception handling: 
+	exception handling is important because it helps maintain the normal, desired flow of the program even when unexpected events occur. 
+	If exceptions are not handled, programs may crash or requests may fail.
+
+
+Reason of using Exception Handling:
+	The reason of handling exception is that the standard library and most of the 3rd party libraries and packages use exceptions - 
+	so you will encounter them and have to deal with them; they are something you will need to use.
+
+
+
+
+
+If you have some suspicious code that may raise an exception, you can defend your program by placing the suspicious code in a try: block. 
+After the try: block, 
+include an except: which handles the problem as elegantly as possible.
+
+
+
+*************************************
+Syntax:
+Here is simple syntax of try....except blocks −
+
+try:
+   You do your operations here(risky code)
+   
+except ExceptionI as obj:
+   If there is ExceptionI, then execute this block.
+
+except ExceptionII as obj:
+   If there is ExceptionII, then execute this block.
+*************************************
+
+
+
+*************************************
+The except Clause with Multiple Exceptions
+You can also use the same except statement to handle multiple exceptions as follows −
+
+try:
+   You do your operations here
+   
+except(Exception1, Exception2, ....) as obj:
+   If there is any exception from the given exception list, 
+   then execute this block.
+*************************************   
+ 

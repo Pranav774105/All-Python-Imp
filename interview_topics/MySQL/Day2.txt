@@ -1,0 +1,44 @@
+WHERE CLAUSE:
+
+10. select * from student where condition;
+=
+!=
+>
+< 
+>=
+<=
+or
+and
+in (val1, val2, val3)
+between val1 and val2
+
+
+WILDCARD CHARACTERS:
+1.	%	This symbol indicates zero or more characters.
+2.	_	This symbol is used to match exactly one(single) character.
+
+11. select * from student where field like 'wildcard character';
+
+12. delete from tbl_name where condition;
+
+13. update tbl_name set field1 = val1 where condition;
+
+14. alter table tbl_name add column field1 datatype1;
+
+15. alter table tbl_name drop column field1;
+
+CONSTRAINTS IN MySQL:
+The constraint in MySQL is used to specify the 
+rule that restricts what values/data will be stored in the table.
+
+1. NOT NULL - Ensures that a column cannot have a NULL value
+
+	16. create table tbl_name(field1 datatype1 not null);
+
+
+2. UNIQUE - Ensures that all values in a column are different
+
+	17.  create table tbl_name (field1 datatype1 unique);
+
+
+create table student1 select * from student;

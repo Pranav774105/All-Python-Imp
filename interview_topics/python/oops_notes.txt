@@ -1,0 +1,91 @@
+
+
+#*******************************************************
+Inheritance is the capability of one class to derive or inherit the properties from another class. 
+It is also called as IS-A-Relationship.
+
+It provides reusability of a code. We don’t have to write the same code again and again.
+
+
+Types of Inheritance:
+1. Single level inheritance
+2. Multilevel inheritance
+3. Multiple inheritance
+4. Hierarchical inheritance
+5. Hybrid inheritance
+
+
+super() function is used to access properties of parent class.
+
+issubclass(sub, sup) method:
+It returns true if the first class is the subclass of the second class,
+and false otherwise.
+
+
+
+isinstance(obj, class) method:
+It returns true if the first parameter, i.e., obj is the instance of the second
+parameter, i.e., class.
+
+
+Method Resolution Order(MRO) is used by python interpreter in which order class attributes or methods to be searched.
+
+
+#*******************************************************
+
+
+
+The word polymorphism means having many forms. In programming,
+polymorphism means the same function name (but different signatures) being
+used for different types.
+We achieve polymorphism by overloading, overriding and duck typing
+
+
+Python doesnot support method overloading but still we can achieve it by installing third party library called multipledispatch.
+if methods having same name but different signature then those methods are called as overloaded methods.
+
+
+
+If child class is not satisfied with parent class implementation then child class can have its own implementation
+called as method overriding.
+This process of re-implementing the parent class method in the child class is known as Method Overriding.
+
+
+Dynamic Typing:
+In Dynamic Typing, type checking is performed at runtime
+
+
+
+Static Typing:
+is opposite to Dynamic Typing. In Static Typing, type checking is performed during compile time. 
+
+
+int x = 10;
+
+
+
+Duck Typing
+Duck Typing is a concept related to Dynamic Typing, where the type or the class of an object is less important than the method it defines.
+Using Duck Typing, we do not check types at all. Instead we check for the presence of a given method or attribute.
+
+#*******************************************************
+
+
+Encapsulation in Python is the process of wrapping up variables and methods into a single entity.
+
+Encapsulation acts as a protective layer by ensuring that, access to wrapped data is not
+possible by any code defined outside the class in which the wrapped data are defined.
+Encapsulation provides security by hiding the data from the outside world.
+
+
+
+So, to access them outside class there are 2 ways, by Name
+mangling and by Setter-Getter.
+
+
+
+Accessing through Name mangling:
+Syntax:
+objName._className__varName/methodName
+
+#**********************************************************

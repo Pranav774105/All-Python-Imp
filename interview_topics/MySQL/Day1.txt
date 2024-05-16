@@ -1,0 +1,82 @@
+Data:
+Data is collection of raw, unorganized facts and details.
+Data can be anything like your name, age, DOB, rollno, eid, salary, marks, address, acct.number, phone number, pincode, date..... 
+
+
+structured data:
+	The data which is highly organized is referred to as structured data.
+	It is quantitative(measurable) in nature like numbers, dates, and times.
+	It is easy to search and analyze structured data. Structured data exists in a predefined format.
+
+
+unstructured data:
+	All the data in files, log files, emails, social media comments and posts are included in the unstructured data. 
+
+
+To store data we need database.
+
+** types of DBMS **
+
+Centralised database.
+Distributed database.
+Personal database.
+End-user database.
+Commercial database.
+NoSQL database.
+Operational database.
+Relational database --> MySQL, MSSQL, SQLite, Oracle, PostgreSQL...
+Cloud database.
+Object-oriented database.
+Graph database.
+
+
+structured data lives in relational databases.
+The data here is set up in tables that have rows (records) and columns (fields). 
+
+
+** MySQL is a widely used relational database management system (RDBMS).
+What is MySQL?
+MySQL is free, ideal for both small and large applications.
+MySQL is very fast, reliable, scalable, and easy to use
+MySQL is cross-platform
+MySQL was first released in 1995
+MySQL is developed, distributed, and supported by Oracle Corporation
+MySQL is named after co-founder Micheal Widenius's daughter: My
+
+
+Who Uses MySQL?
+Huge websites like Facebook, Twitter, Airbnb, Booking.com, Uber, GitHub, YouTube, etc.
+
+RDBMS uses SQL queries to access the data in the database.
+
+What is Structured Query Language?
+SQL is the standard language for dealing with Relational Databases.
+SQL is used to insert, search, update, and delete database records.
+
+
+These SQL commands are mainly categorized into five categories as: 
+
+DDL – Data Definition Language
+DQL – Data Query Language
+DML – Data Manipulation Language
+DCL – Data Control Language
+TCL – Transaction Control Language
+
+
+
+
+
+
+1. show databases;
+2. create database db_name;
+3. drop database db_name;
+4. use db_name;
+5. create table tbl_name (field1 datatype1, field2 datatype2..... );
+ --> if dataype is varchar(size) need to mention size compulsory
+6. desc tbl_name;
+7. drop table tbl_name;
+8. insert into tbl_name values(val1, val2, .....);
+9. insert into tbl_name(field1, field2...) values (val1, val2);
+10. select * from tbl_name;
+11. select fieldname1, fieldname2.... from tbl_name;
+

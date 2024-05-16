@@ -1,0 +1,15 @@
+immutablity:
+once we create an object we cant perform any changes if we try to 
+perform any changes with those changes new object will get created
+
+a = 10
+b = 10
+both a and b shares same memory loaction as all fundamental datatypes 
+are immutable in nature
+
+l = [1, 2, 3]
+l1 = [1, 2, 3]
+l and l1 have differnt memory locations as list is an mutable ds
+
+== meant for content comparison
+is meant for address comparison

@@ -1,0 +1,56 @@
+
+READ binary Mode
+"Binary" files are any files where the format isn't made up of readable characters. 
+Binary files can range from image files like JPEGs or GIFs, audio files like MP3s or binary document formats like PDF. 
+In Python, files are opened in text mode by default. To open files in binary mode, when specifying a mode, add 'b' to it.
+
+
+f1 = open(r'abc.jpg', 'rb')
+f2 = open(r'xyz.jpg', 'wb')
+f2.write(f1.read())
+f1.close()
+f2.close()
+print(f1.closed, f2.closed)
+*************************************************************************
+
+Another approaches used to Close file:
+
+It’s important to remember that it’s your responsibility to close the file. If not closed
+properly can lead to unwanted behavior including resource leaks.
+When you’re manipulating a file, there are two ways that you can use to ensure that
+a file is closed properly, even when encountering an error.
+
+
+
+1)The first way to close a file is to use the try-finally block:
+	f = open('abc.txt')
+	try:
+		# Further file processing goes here
+	finally:
+		f.close()
+
+2)The second way to close a file is to use the with statement:
+	with open('abc.txt') as f:
+		# Further file processing goes here
+
+The with statement automatically takes care of closing the file once it leaves the
+with block, even in cases of error.
+
+**********************************************************
+with open('abc.txt', 'w') as f:
+	f.write('xyz\n')
+	f.write('abc\n')
+	print(f.closed)
+print(f.closed)
+
+
+
+flush() -->clears the internal buffer of the file
+***********************************************************************
+import os, shutil
+os.rename('old_file_path', 'new_file_path')
+os.remove('file_path')
+
+shutil.copy('src_file_path', 'new_path')
+shutil.move('src_file_path', 'new_path')
+

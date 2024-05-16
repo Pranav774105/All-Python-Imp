@@ -1,0 +1,85 @@
+RESTful web services :
+	Django REST framework is a powerful and flexible toolkit for building Web APIs.
+	
+	Why Rest Framework? :
+		Multiple Authentication Policies.
+
+		Serialization that supports ORM and NON-ORM data resources.
+
+		Customizable all the way down - just use regular function-based views if you don't need the more powerful
+		features.
+
+		Extensive Documentation and great community support.
+
+		Used and trusted by internationally recognized companies including Mozilla, Red Hat, Heroku, and Eventbrite.
+
+
+Creating Virtual Environment:
+	first, download the virtualenv package using 
+		pip install virtualenv
+	
+	create a virtual environment by using the command
+		virtualenv virtual_environment_name
+
+	to activate the virtual environment 
+		venv\Scripts\activate - for windows users
+		source venv/bin/activate - for linux and Mac users
+
+
+How to Create Rest API in the django application:
+	you will have to install package Django rest framework
+		pip install djangorestframework
+
+	create a project 
+		django-admin startproject project_name
+
+	cd project_name
+		py manage.py startapp app_name
+
+	In order to create restful api you have to register rest_framework in the project.
+	register/add the 'rest_framework' app in INSTALLED_APPS 
+		INSTALLED_APPS = [
+		........,
+		'app_name',
+		'rest_framework',
+		]
+
+	Inside the views.py of the app created using py manage.py startapp <app_name> import the Response class from
+	the rest_framework.response module and import api_view decorator from rest_framework.decorators module 
+
+		from rest_framework.response import Response
+		from rest_framework.decorators import api_view
+
+		@api_view()
+		def first_api(request):
+			return Response(data={'detail':'This is first api'})
+
+	Create endpoints for the api that are created in views.py
+	To Create Endpoints, inside the app create module named urls.py
+
+	urls.py
+		from django.urls import path
+		from .views import first_api
+
+		urlpatterns = [
+			path('first_api/', first_api)
+		] 
+
+	once the endpoints are created , register them in project level urls using include function
+
+		from django.urls import path, include
+
+		urlpatterns = [
+			...,
+			path('', include('app_name.urls')),
+		]
+
+when you are creating any rest api then never use request.POST, instead of that use request.data
+
+request object of Django is of HttpRequest but the request object of rest_framework is of Request Class.
+
+Difference between request.POST and request.data
+	request.POST only works for POST request but request.data works for any arbitratory http method or request.
+	request.POST only handles textual data of form but request.data handle both textual and non textual(files) type
+	of data.
+	

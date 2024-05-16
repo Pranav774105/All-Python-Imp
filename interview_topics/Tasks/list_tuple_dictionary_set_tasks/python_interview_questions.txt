@@ -1,0 +1,128 @@
+1. What is Python? What are the benefits of using Python
+
+2. What is a dynamically typed language?
+
+
+3. What is an Interpreted language?
+
+4. What is PEP 8 and why is it important?
+
+
+5. What is Scope in Python?
+or
+What are Python namespaces? Why are they used?
+
+6. What are lists and tuples? What is the key difference between the two?
+
+7. What are the common built-in data types in Python?
+
+8. What is break, pass, continue in Python?
+
+9. What are modules and packages in Python?
+
+10.Library vs Framework?
+
+11.What are global, protected and private attributes in Python?
+
+12. What is the use of self in Python?
+
+13. What is __init__ and __str__?
+
+14. What are unit tests in Python?
+
+15. What is docstring in Python?
+
+16. What is slicing in Python?
+
+17.How is memory managed in Python?
+
+18.What are decorators in Python?
+
+19.What are Dict and List comprehensions?
+
+20.What is lambda in Python? Why is it used?
+
+21.Shallow Copy vs Deep Copy?
+
+22.What are generators in Python?
+
+23.What is PYTHONPATH in Python?
+
+24.What is the use of help() and dir() functions?
+
+25.What is the difference between .py and .pyc files?
+
+26. How are arguments passed by value or by reference in python?
+
+27. What are iterators in Python?
+
+28. Explain how to delete a file in Python?
+
+29.Explain split() and join() functions in Python?
+
+30.What does *args and **kwargs mean?
+
+31.How do you create a class in Python?
+
+32. How does inheritance work in python? Explain it with an example.
+
+33. How is an empty class created in python?
+
+34. How will you check if a class is a child of another class?(issubclass)
+
+35. Define PIP.
+
+36. What is main function in python? How do you invoke it?
+
+37.What is the difference between a Mutable datatype and an Immutable data type?
+
+38.What is the difference between a Set and Dictionary?
+
+39.What is List Comprehension? Give an Example.
+
+40. What is a lambda function?
+
+41. What is the difference between / and // in Python?
+
+42. How is Exceptional handling done in Python?
+
+43. What is swapcase function in Python?
+
+44. Difference between for loop and while loop in Python
+
+45. Is Indentation Required in Python?
+
+46. What is debugging.
+
+47. What is a zip function?
+
+48. What is monkey patching in Python?
+
+49. Write a code to display the current time?
+
+50.Python Global Interpreter Lock (GIL)?
+
+51. What are Function Annotations in Python?
+
+52.What is Python matchcase(Switch) Statement 
+
+53.method overloading, overriding, operator overloading.
+
+54.what is __init__.py .
+
+55. what is cached_property decorator and what ia cache memory?
+
+56. Explain class, static, instance method?
+
+57. what is closures in python?
+
+58. How to sort custom objects?
+
+59.What is first class Objects in python?
+
+60.diff betn == and is?
+
+61. return vs yield keyword?
+
+62.use of super() in python?
+

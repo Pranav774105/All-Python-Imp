@@ -1,0 +1,59 @@
+In Python, the term monkey patch refers to dynamic (or run-time) modifications of a class or module. 
+In Python, we can actually change the behavior of code at run-time.
+
+
+# monk.py
+class A:
+     def func(self):
+          print ("func() is being called")
+
+We use above module (monk) in below code and change behavior of func() at run-time by assigning different value.
+
+
+
+
+
+
+# B.py
+import monk
+
+def monkey_f(self):
+     print ("monkey_f() is being called")
+
+# replacing address of "func" with "monkey_f"
+
+
+monk.A.func = monkey_f
+obj = monk.A()
+ 
+# calling function "func" whose address got replaced
+# with function "monkey_f()"
+obj.func()
+Examples:
+
+Output : monkey_f() is being called
+
+
+
+
+
+
+
+
+
+ex.1:
+
+When we work on a large project, we may encounter a situation where the third-party library is not working well. 
+So we attempt to revise (or change) it from our project. This process is known as monkey patching in Python. 
+Generally, it is avoided by the developer. However, it is a part of the development process.
+In monkey patching, we can reopen the class and modify its behavior.
+
+ex.2 
+For instance, consider a class that has a method get_data. This method does an external lookup (on a database or web API, for example), 
+and various other methods in the class call it. However, in a unit test, you don't want to depend on the external data source - 
+so you dynamically replace the get_data method with a stub that returns some fixed data.
+
+
+Conclusion
+We have discussed how we can achieve the monkey-patching in Python. But it consists of few disadvantages and should be used carefully. 
+It is not good to use in application design because it distinguishes the source code on disk and the observed behavior. Developer can be confused while debugging.

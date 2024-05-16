@@ -1,0 +1,141 @@
+### DECLARATIVE WAY OF MAPPING
+
+# CUSTOMER
+
+
+from sqlalchemy import create_engine, Column, Integer, 
+String, Float
+
+from sqlalchemy.orm import sessionmaker, declarative_base
+
+DB_URL = 'mysql://root:root@127.0.0.1:3306/b29sqlal'
+
+ENG = create_engine(DB_URL)
+#print(ENG, type(ENG))
+
+Base = declarative_base()
+
+class Customer(Base):
+    __tablename__ = 'cust1'
+    cid = Column(Integer, primary_key = True)
+    name = Column(String(60))
+    amt = Column(Float)
+
+    def __str__(self):
+        return f'\n****** CUSTOMER DETAILS *****'\
+               f'\nCUSTOMER ID    : {self.cid}'\
+               f'\nCUSTOMER NAME  : {self.name}'\
+               f'\nCUSTOMER AMOUNT: {self.amt}'
+    
+Base.metadata.create_all(ENG)
+#print('Table Created')
+
+Session = sessionmaker(bind = ENG)
+sess = Session()
+
+
+while 1 == 1:
+    ch = int(input('\t-----MENU-----'\
+                   '\n\t1. INSERT DATA'\
+                   '\n\t2. RETRIVE DATA'\
+                   '\n\t3. UPDATE DATA'\
+                   '\n\t4. DELETE DATA'\
+                   '\n\t5. EXIT'\
+                   '\n\tEnter Your CHOICE:'))
+
+##################    INSERT DATA #############################
+    if ch == 1:
+        n = int(input('How many customers you want to enter:'))
+
+        customer_list = []
+        
+        for i in range(n):
+            cd = int(input('Enter CUSTOMER ID:'))
+            nm = input(f'Enter NAME for CUSTOMER {cd}:')
+            amo = float(input(f'Enter AMOUNT for CUSTOMER {cd}:'))
+
+            c = Customer(cid = cd, name=nm, amt = amo)
+            customer_list.append(c)
+            
+        sess.add_all(customer_list)
+
+################### RETRIVE DATA ##################################
+    elif ch == 2:
+        ch1 = int(input('\nDo you want to display:'\
+                        '\n1. All Records'\
+                        '\n2. Particular Records'\
+                        '\n ENter Choice:'))
+
+        ### ALL RECORDS
+        if ch1 == 1:
+            result = sess.query(Customer)
+
+            for i in result:
+                print(i)
+        ## PARTICULAR RECORD
+        elif ch1 == 2:
+            cd = int(input('Enter the REFERENCE CUSTOMER ID:'))
+
+            result = sess.query(Customer).filter(Customer.cid == cd)
+
+            for i in result:
+                print(i)
+
+######################### UPDATE DATA   ################################
+    elif ch == 3:
+       ch1 = int(input('\nWhat Do you want to UPDATE:'\
+                       '\n1. CUSTOMER ID'\
+                       '\n2. CUSTOMER NAME'\
+                       '\n3. CUSTOMER AMOUNT'\
+                       '\nENTER CHOICE:'))
+
+       ## TO UPDATE CUSTOMER ID
+       if ch1 == 1:
+           cd = int(input('\nEnter the NEW CUSTOMER ID:'))
+
+           ch2 = int(input('\nBy Which Parameter you want to update CUSTOMER ID:'\
+                           '\n1. CUSTOMER ID'\
+                           '\n2. CUSTOMER NAME'\
+                           '\n3. CUSTOMER AMOUNT'\
+                           '\nENTER CHOICE:'))
+
+           if ch2 == 1:
+               cd_ref = int(input('Enter the REFERENCE CUSTOMER ID:'))
+
+               sess.query(Customer).filter(Customer.cid == cd_ref).update({Customer.cid: cd})
+
+           elif ch2 == 2:
+               nm_ref = input('Enter the REFERENCE CUSTOMER NAME:')
+
+               sess.query(Customer).filter(Customer.name == nm_ref).update({Customer.cid: cd})
+
+           elif ch2 == 3:
+               amt_ref = float(input('Enter the REFERENCE CUSTOMER AMOUNT:'))
+
+               sess.query(Customer).filter(Customer.amt <= amt_ref).update({Customer.cid: cd})
+
+            #### HOMEWORK
+        
+
+###################### DELETE DATA ####################################
+    elif ch == 4:
+        ch1 = int(input('\nBy Which Parameter you want to DELETE CUSTOMER ID:'\
+                           '\n1. CUSTOMER ID'\
+                           '\n2. CUSTOMER NAME'\
+                           '\n3. CUSTOMER AMOUNT'\
+                           '\nENTER CHOICE:'))
+
+        ### DELETE by CUSTOMER ID
+        if ch1 == 1:
+            cd_ref = int(input('Enter the REFERENCE CUSTOMER CID:'))
+
+            sess.query(Customer).filter(Customer.cid == cd_ref).delete()
+            
+        ### HOMEWORK
+
+#####################  EXIT  #######################################
+    elif ch == 5:    
+        break
+
+    sess.commit()
+sess.close()  

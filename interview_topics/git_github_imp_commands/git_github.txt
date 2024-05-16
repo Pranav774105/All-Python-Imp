@@ -1,0 +1,167 @@
+git config --global user.email "useremail@gmail.com"
+git config --global user.name "ajay latne"
+
+
+git config user.email
+git config user.name
+
+
+git init --> initialize repository
+git status 
+git log
+git add file_name/ . --> start tracking changes
+git commit -m "comment goes here"
+
+
+project --> commit1 -> commit2 -> commit3 <- head -- main(branch name)
+
+head alaways points to latest commit
+
+
+
+
+now to revoke changes use below commands:
+
+1. changes done in file but you want to revoke before git add .
+
+use
+git restore file.txt
+
+2. after git add .
+
+use
+git reset
+
+
+3. after commit 2 option --soft --hard
+
+git reset --soft HEAD~1 (1 step back)
+git reset --hard HEAD~1
+
+
+
+Branch 
+
+
+git branch --> to check available branches
+branch having * as prefix considered as current branch
+
+git branch new_branch --> to create new branch
+
+git checkout new_branch --> checkout to new branch
+
+
+git checkout -b branch_name --> creating new branch and switching to that
+branch at same time
+
+git branch -m branch2_renamed --> to rename branch
+
+git branch -d new_branch --> to delete branch make sure you current working 
+branch is different
+
+
+
+
+
+
+git stash --> it is like stop here do other works come back and resume
+by
+git stash apply
+
+
+main
+feature_branch
+
+
+go on main branch
+
+git checkout main
+git merge feature_branch
+
+now main will have all updated code from feature_branch
+
+
+suppose main have file1.txt and code on line 1 
+also feature branch have file1.txt and code on line 1
+
+in case of conflict
+
+resolve it by keeping changes of either main or feature_branch
+
+
+
+
+
+GIT HUB
+
+git add README.md --> md stands for markdown --> readme have simple syntax 
+to make it more readbale
+
+
+git branch -M main
+
+git remote add origin https://github/com/ --> origin is alias name for this link
+
+
+git remote -v --> from where we are fetching data or where we will push data
+
+git push -u origin main
+
+origin --> remote repo
+main --> our branch
+
+.gitignore --> have no extension
+add files or folders which you dont wants to upload on github
+
+
+*.sql --> ignore all files with this(sql) extension
+.env --> ignore this file
+/node-modules --> ignore this folder
+index.html --> ignore this file
+/public/storage --> ignore this folder
+/sql/*.sql --> ignore all sql files from this folder
+
+
+
+
+git clone https://github.com/ --> to get all code from another directory
+
+
+
+fire these command on local machine
+
+git fetch origin --> to fetch code from git hub
+
+git merge origin/main --> main --> name of branch where to merge
+
+
+
+git pull origin = git fetch origin + git merge origin/main
+
+
+on github
+
+go to anyones git repo and click on fork
+get that project into your github
+
+then take it to local by git clone https://
+
+
+do some changes 
+git push origin
+
+
+
+
+Create PR in GitHub
+
+
+	target        	            current
+repo_name  branch_name        repo_name  branch_name 
+
+
+
+and let the owner of account decide what to do accept/reject   
+
+
+

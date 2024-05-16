@@ -1,0 +1,144 @@
+1.Reverse The Number (123--321)
+num = 123
+reverse = 0
+rem = 0
+
+while num>0:
+    rem = num % 10
+    reverse = reverse*10 + rem
+    num = num // 10
+print('Reverse :', reverse)
+
+print(str(num)[::-1])
+
+2.Palindrome Number (121=121)
+num = 121
+reverse = 0
+rem = 0
+num1 = num
+
+while num>0:
+    rem = num % 10
+    reverse = reverse*10 + rem
+    num = num // 10
+print('Reverse :', reverse)
+
+if num1 == reverse:
+    print('Number is palindrome')
+else:
+    print('Not')
+
+
+
+3.Factorial (4! = 1*2*3*4)
+fact = 1
+num = 5 
+for i in range(1,num+1, 1):
+    fact *= i
+print(fact)
+
+
+
+4.Prime Number (cant get fully divide by 1 and own)
+num = 5
+count = 0
+for i in range(2, num, 1):
+    if num % i == 0:
+        count += 1
+        break
+if count == 0:
+    print('Number is Prime')
+
+else:
+    print('Not')
+
+
+
+5.Factors Program (4 = The factors of 4 are integers that divide 4 without leaving any remainder. )
+num = 4
+for i in range(1, num, 1):
+       if num % i == 0:
+           print('Factors are:',i)
+
+
+
+6.Perfect Number(6 =1+2+3 addition of factors)
+num = 6
+add = 0
+var = num
+for i in range(1,num,1):
+    if num%i == 0:
+        add += i
+if var == add:
+	print('Number is Perfect')
+else:
+	print('Not Perfect')
+
+
+
+7.Spy Number (1124 = 1+1+2+4 = 1*1*2*4)
+num = 1124
+var1 = 0
+var2 = 1
+
+while num > 0:
+    rem = num % 10
+    var1 += rem
+    var2 *= rem
+    num = num // 10
+if var1 == var2:
+    print('Number is Spy')
+else:
+    print('Not')
+
+8.Strong Number (145 = 1!+4!+5! = 145)
+num = 145
+rem = 0
+temp = num
+add = 0
+while num>0:
+    rem = num%10
+    fact = 1
+    for i in range(1, rem+1,1):
+        fact *= i
+    add = add + fact
+    num //= 10
+print(add)
+
+
+9.Number of Digit (121 = 3 digits)
+num = 121
+digit = 0
+while num>0:
+    rem = num % 10
+    digit += 1
+    num //= 10
+print('No of digits are:', digit)
+
+
+
+10.ArmStrong Number (153 = 1*1*1 + 5*5*5 + 3*3*3  3 times multiply bcoz no of digits are 3)
+num = 153
+temp = num
+add = 0
+while num > 0:
+    rem = num % 10
+    add += rem*rem*rem
+    num //= 10
+if temp == add:
+    print('Number is Armstrong')
+else:
+    print('Not')
+
+*********************
+Find the sum of the series upto n terms
+Write a program to calculate the sum of series up to n term. For example, if n =5 the series will become 2 + 22 + 222 + 2222 + 22222 = 24690
+
+Given:
+
+# number of terms
+n = 5
+Expected output:
+
+
+24690

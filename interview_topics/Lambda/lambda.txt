@@ -1,0 +1,35 @@
+What are Python lambda expression/lambda function/anonymous function.
+
+	Python lambda expressions allow you to define anonymous functions.
+	Anonymous functions are functions without names. 
+	The anonymous functions are useful when you need to use them once or for a short period of time.
+
+A lambda expression typically contains one or more arguments, but it can have only one expression.
+
+syntax:
+
+lambda parameters: expression
+The expression is executed and the result is returned:
+
+
+
+**************************************************************************
+
+
+
+
+
+
+Write a Python program to create a lambda function that adds 15 to a given number passed in as an argument, 
+
+
+also create a lambda function that multiplies argument x with argument y and print the result
+
+
+
+Write a lambda function that takes x as parameter and returns x+2. Then assign it to a variable
+
+Write a lambda function which takes z as a parameter and returns z*11
+
+
+

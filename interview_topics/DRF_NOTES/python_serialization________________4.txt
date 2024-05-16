@@ -1,0 +1,62 @@
+Serialization:
+	Serialization is defined as a process of converting an object into a sequence or stream of bytes that can
+	persist in a database or file or can be sent through streams.
+
+	Serialization saves the state of objects for recreation without having to reprocess them on diffrent platforms..
+
+	Serialization is useful for storing, Transmitting the state of on object.
+
+Concept of Serialize:
+		Object -> Byte-Stream -> File/Database/transmit over the network
+
+Deserialization:
+		Deserialization is reverse or opposite process of creating an object from a sequence/stream of bytes.
+
+Concept of Deserialization:
+		File/Database/transmit over the network -> Byte-Stream -> Object
+
+Advantages of Serialization and Deserialization:
+		It is platform independent.
+		Serialization reduces the data size of an object.
+		Because of less data size the serialized data gets trasmitted fastly over the network.
+
+
+
+Pickling and UnPickling in Python:
+		Python provides easy interface to serialize and deserialize the data i.e pickle module
+
+Pickling :
+		Pickling is a process through which we convert python object into the byte stream.
+
+		it is done by using dump() method 
+
+		e.x pickle.dump(object, file)
+
+		The first argument is the python object that needs to be serialized. The second argument will be the file
+	object where we will store the serialized python object.
+
+	
+UnPickling :
+		Unpickling is a process in which original python objects are retrieved from the previously stored string
+	representation or we can say it as byte stream.
+
+		it is done by using load() method
+
+		e.x obj = pickle.load(file)
+
+
+
+Cross-Platform-Compatibility:
+		JavaScript object notation(JSON) is a popular serialization and deserialization format used in rest applications.
+
+JSON -
+		JSON stands for JavaScript object notation and is a lightweight data-interchange format.
+		It is easy for humans to read and write and is easy for machines to parse and generate.
+		JSON is a text format which is completely language independant but uses the conventions used by most
+	programming languages.
+		JSON supports universal data structures like int , float , string , array, object which are supported by 
+	all modern programming languages.
+		
+		
+
+		 	

@@ -1,0 +1,82 @@
+Python utilizes a system, which is known as “Call by Object Reference”. 
+In the event that you pass arguments like whole numbers, strings or tuples to a function, 
+the passing is like call-by-value because you can not change the value of the immutable objects being passed to the function. 
+Whereas passing mutable objects can be considered as call by reference because when their values are changed inside the function, 
+then it will also be reflected outside the function.
+Example 1: 
+ 
+
+
+# Python code to demonstrate
+# call by value
+ 
+ 
+string = "Geeks"
+ 
+ 
+def test(string):
+     
+    string = "GeeksforGeeks"
+    print("Inside Function:", string)
+     
+# Driver's code
+test(string)
+print("Outside Function:", string)
+Output 
+ 
+
+Inside Function: GeeksforGeeks
+Outside Function: Geeks
+Example 2 
+ 
+
+
+# Python code to demonstrate
+# call by reference
+ 
+ 
+def add_more(list):
+    list.append(50)
+    print("Inside Function", list)
+ 
+# Driver's code
+mylist = [10,20,30,40]
+ 
+add_more(mylist)
+print("Outside Function:", mylist)
+Output 
+ 
+
+Inside Function [10, 20, 30, 40, 50]
+Outside Function: [10, 20, 30, 40, 50]
+ 
+
+Binding Names to Objects
+In python, each variable to which we assign a value/container is treated as an object. 
+When we are assigning a value to a variable, we are actually binding a name to an object.
+ 
+
+
+a = "first"
+b = "first"
+ 
+ 
+# Returns the actual location
+# where the variable is stored
+print(id(a))
+ 
+# Returns the actual location
+# where the variable is stored
+print(id(b))
+ 
+# Returns true if both the variables
+# are stored in same location
+print(a is b)
+Output 
+ 
+
+110001234557894
+110001234557894
+True
+
+https://www.youtube.com/watch?v=_JIUExilbpw

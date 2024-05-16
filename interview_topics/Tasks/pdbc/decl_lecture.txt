@@ -1,0 +1,47 @@
+##from sqlalchemy import create_engine, Column, Integer, String, Float
+##from sqlalchemy.orm import declarative_base, sessionmaker
+##
+##DB_URL = 'mysql://root:root@127.0.0.1:3306/decl'
+##
+##ENG = create_engine(DB_URL)
+##
+##Base = declarative_base()
+
+##
+##class Employee(Base):
+##    __tablename__ = 'employee1'
+##    eid = Column(Integer, primary_key=True)
+##    ename = Column(String(20))
+##    esalary = Column(Float)
+##
+##    def __str__(self):
+##        return f'{self.eid}   {self.ename}    {self.esalary}'
+##
+##Base.metadata.create_all(ENG)
+##print('Table Created')
+##
+##
+##Session = sessionmaker(bind=ENG)
+##sess = Session()
+##obj = Employee(eid=101, ename='abc', esalary=50000)
+##sess.add(obj)
+##obj1 = Employee(eid=102, ename='pqr', esalary=100000)
+##obj2 = Employee(eid=103, ename='xyz', esalary=80000)
+##emp_list = [obj1, obj2]
+##sess.add_all(emp_list)
+##print('Records Added...')
+
+##objs = sess.query(Employee)
+##for emp in objs:
+##    print(emp)
+
+##objs = sess.query(Employee).filter(Employee.esalary > 50000)
+##for emp in objs:
+##    print(emp)
+
+##sess.query(Employee).filter(Employee.eid == 103).update({Employee.esalary: 100000})
+##objs = sess.query(Employee)
+##for emp in objs:
+##    print(emp)
+##sess.commit()
+

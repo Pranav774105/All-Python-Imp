@@ -1,0 +1,3 @@
+other than __init__()  --> constructor
+there is __init__.py file is there in python if this file is present in any directory then that directory will be considerd as package.
+Whenever we import a package __init__.py file will get called

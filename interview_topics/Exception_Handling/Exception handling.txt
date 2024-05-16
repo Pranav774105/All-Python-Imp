@@ -1,0 +1,61 @@
+
+string = '12abcd23'
+str1 = ''
+for i in string:
+	try:
+		str1 += int(i)
+	except:
+		pass
+
+
+
+
+You can use if the else’s but imagine this scenario :
+
+filepath=‘data.txt’ 
+if os.path.exists(filepath) 
+    fp = open(filepath, ‘r’) 
+    # process file contents 
+else: 
+    print(‘Missing data file’) 
+
+
+This code will work reliable only if you can absolutely guarantee that nothing will delete that file between line 2 & line 3 - 
+and on a system with multiple processes and with users logged in, you can’t guarantee that; even with file permisssions set, 
+someone could logged in as admin and delete the file. It also only deal with whether the file exists or not - what about other issues 
+such as the file being read only; you would need another if test for that.
+
+
+With exceptions the code is much safer
+
+filepath=‘data.txt’ 
+try: 
+   fp = open(filepath,’r’) 
+   # Proxess file 
+except OSError: 
+   print(‘Missing data file’) 
+This code is entirely safe - and the exception will be raised no matter why you can’t open the file.
+
+The 2nd reason for using exceptions is that in general they are quicker - in the above example the ‘open’ function already does tests internally 
+to see if the file exists or is read-only - so if your code does those calls again it is wasted effort. Using exceptions assumes that those
+ tests are done somewhere and that you can rely on the function you are calling to raise those exceptions.
+
+The 3rd reason is that it is considered good practice. There is a python principle that says ‘Better ask forgiveness than ask permission’
+ - that is - rely on the the system and other modules to tell you that you are doing something wrong rather than trying to make sure you are doing everything right before you do it.
+
+The final reason is that the standard library and most of the 3rd party libraries and packages use exceptions - 
+so you will encounter them and have to deal with them; they are something you will need to use - so make the best of them.
+
+
+
+
+
+*************************
+Exception handling is almost necessary when you deal with external programs as you cannot control their output or their state. 
+So in a way exception handling helps you recover without crashing your program and to get important information to debug issues.
+
+
+
+
+*************************************************
+https://www.quora.com/What-is-exception-handling-in-python

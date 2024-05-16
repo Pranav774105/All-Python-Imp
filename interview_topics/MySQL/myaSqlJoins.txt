@@ -1,0 +1,43 @@
+JOINS in MySQL
+	
+
+Q. WHAT IS NEED OF JOINS IN SQL?
+   	joins are used to retrieve data from two or more tables
+
+           TYPES OF JOINS IN MYSQL
+1. Left Join (Left Outer join):
+	It’s return all record from left table and matching records from right table
+
+		select * from left_table left join right_table on table1.field1 = table2.field1;
+
+2. Right Join(Right Outer Join):
+	It’s return all record from right table and matching records from left table
+
+		select * from left_table right join right_table on table1.field1 = table2.field1;
+
+3. inner join(Join):
+	It returns matching records from both tables
+
+	 	select * from left_table inner join right_table on table1.field1 = table2.field1;
+
+4. FULL JOIN (or FULL OUTER JOIN): 
+	Returns all records when there is a match in either left (table1) or right (table2) table records.
+
+		SELECT  * FROM table1 FULL JOIN table2 ON table1.column_name = table2.column_name;
+
+5. CROSS JOIN:
+	Returns the Cartesian product of the two tables, i.e., all possible combinations of rows.
+		
+		SELECT * FROM table1 CROSS JOIN table2;
+
+6. SELF JOIN:
+ 	Joins a table to itself, typically used to compare rows within the same table.
+
+		SELECT * FROM table1 t1, table1 t2 WHERE t1.column_name = t2.column_name;
+
+7. NATURAL JOIN :
+	is a type of join in SQL that allows you to combine two tables based on columns with the same name and data types. When you use 	NATURAL JOIN, the join condition is implicitly based on columns with the same name in both tables
+
+		SELECT * FROM tbl_1 NATURAL JOINtbl_2;
+
+

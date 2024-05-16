@@ -1,0 +1,29 @@
+task 1:
+
+grocery_items = {'milk': 40, 'sugar': 30, 'salt': 10}
+def bill(my_dict):
+	addition = 0
+	for i in my_dict.values():
+		addition += i
+	return addition
+print(bill(grocery_items))
+
+
+# define decorator to apply 20% discount in final bill
+
+
+*******************************************************************
+
+task 2:
+
+authorized_ppl = [{'username': 'john', 'password': '1234'}, {'username': 'kelly', 'password': '5678'}, {'username': 'admin', 'password': 'admin123'}]
+
+
+def function():
+   print('logged in now you can execute this function')
+   
+function()
+
+*******************************************************************
+task 3:
+reverse string

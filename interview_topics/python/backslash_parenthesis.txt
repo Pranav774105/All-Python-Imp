@@ -1,0 +1,3 @@
+In Python, a backslash ( \ ) is a continuation character
+
+Python will assume line continuation if code is contained within parentheses, brackets, or braces:

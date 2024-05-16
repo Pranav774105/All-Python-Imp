@@ -1,0 +1,46 @@
+from sqlalchemy import create_engine, MetaData, Table, Column, Integer, String, Float
+from sqlalchemy.orm import sessionmaker, mapper
+
+DB_URL = 'mysql://root:root@127.0.0.1:3306/b30'
+
+ENG = create_engine(DB_URL)
+
+class Student:
+    def __init__(self, r, n, m):
+        self.roll = r
+        self.name = n
+        self.marks = m
+    def __str__(self):
+        return f'roll {self.roll} name {self.name} marks{self.marks}'
+md = MetaData()
+tb = Table ('stu', md,
+            Column('roll', Integer, primary_key = True),
+            Column('name', String (30)),
+            Column('marks', Float))
+mapper (Student, tb)
+md.create_all(ENG)
+print('Table Created')
+
+Session = sessionmaker(bind = ENG)
+sess = Session()
+
+##s1 = Student(2, 'harish', 70)
+##sess.add(s1)
+##s2 = Student(3, 'aaa', 70)
+##s3 = Student (4, 'bbb', 80 )
+##sess.add_all([s2, s3])
+
+
+##sess.query(Student).filter(Student.roll == 2).update({Student.marks: 50})
+
+##sess.query(Student).filter(Student.roll == 2).delete()
+
+result = sess.query(Student).filter(Student.roll >= 2)
+
+for i in result:
+    print(i)
+
+
+sess.query(Student).delete()
+sess.commit()
+sess.close()

@@ -1,0 +1,9 @@
+sort ()method --> do perform changes in existing list.
+l = [30,20,10,40]
+l.sort()
+print(l)
+
+
+sorted Function --> return new list
+print(sorted(l))
+print(l)

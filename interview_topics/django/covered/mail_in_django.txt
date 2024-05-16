@@ -1,0 +1,191 @@
+How to send simple emails to the registered users of your Django application
+
+
+
+settings.py file, enter the following
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = #sender's email-id
+EMAIL_HOST_PASSWORD = #password associated with above email-id
+
+
+
+In the above code, EMAIL_HOST_USER = ‘xabc6457@gmail.com’
+and EMAIL_HOST_PASSWORD = ‘xyz123abc@’
+are the lines where you need to add the sender’s mail id and password. 
+
+
+
+if you are using Gmail, then the first time you make these changes in your project and run, you might get SMTP error.
+To correct that-
+
+
+1-Go to the Google account registered with the sender’s mail address and select Manage your account  
+
+2-Go to security section --> 2-Step Verification --> at the left nav and scroll down. Look for ‘App password’.
+
+3- Inside App password select the any of the option from dropdown and given name as per your wish.
+
+4- Now you will see a code on your screen, copy the code.
+
+5. Paste the code in settings.py where you have declared EMAIL_HOST_PASSWORD. 
+
+6. Finally run the application. Now, register any user to your application, and they will receive mail from the email account you had mentioned. run the application.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+views.py and add these lines at the top section as below.  
+
+from django.conf import settings
+from django.core.mail import send_mail
+
+
+
+def mail_view(request):
+    template_name = 'demo.html'
+    if request.method == 'POST':
+        my_mail = request.POST['my_mail']
+        print(my_mail)
+        my_name = request.POST['my_name']
+        subject = 'welcome to website'
+        message = f'Hi {my_name}, thank you for registering in our website.'
+        email_from = settings.EMAIL_HOST_USER
+        recipient_list = [my_mail]
+        send_mail(subject, message, email_from, recipient_list)
+        return HttpResponse('Mail sent check once')
+    return render(request, template_name)
+
+
+
+
+
+
+
+
+template
+
+demo.html
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <input placeholder="Enter your mail here" type="email" name="my_mail">
+    <input placeholder="Enter your name here" name="my_name">
+    <input type="submit">
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+urls.py
+
+from django.urls import path
+from .views import mail_view
+
+
+urlpatterns = [
+	path('mail_view/', mail_view)
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Now we will understand what exactly is happening. Here,
+
+subject refers to the email subject.
+
+message refers to the email message, the body of the email.
+
+email_from refers to the sender’s details.This takes the EMAIL_HOST_USER from settings.py file,
+where you added those lines of code earlier.
+
+recipient_list is the list of recipients to whom the mail has to be sent that is,
+whoever registers to your application they receive the email.
+
+send_mail is an inbuilt Django function that takes subject,
+message, email_from, and recipient’s list as arguments, this is responsible to send emails.
+
+
+After these extra lines of code has been added to your project, you can send emails now.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+What are cookies?
+Cookies are text files with small pieces of data that are used to identify your computer.
+They are built specifically for web browsers to track, personalize 
+and save information about your “session” on a website. 
+They help web developers give you a more personal and convenient user experience.
+
+
+
+
+
+
+
+
+
+
+A cookie is a small bit of information that a website stores on your computer. 
+When you revisit the website, your browser sends the information back to the site. 
+Usually a cookie is designed to remember and tell a website some useful information about you.

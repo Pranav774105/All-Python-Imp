@@ -1,0 +1,1 @@
+https://pynative.com/python-encapsulation/#:~:text=Encapsulation%20in%20Python%20describes%20the,methods%20into%20a%20single%20unit.

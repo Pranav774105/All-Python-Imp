@@ -1,0 +1,114 @@
+1. Single level
+class Clg:
+	def m1(self):
+		print('m1---Clg')
+class Student(Clg):
+	def m1(self):
+		print('m1--Student')
+		super().m1()
+		print('m1--ends')
+s = Student()
+s.m1()
+
+
+Output 1:
+m1--Student
+m1--Clg	
+
+Output 2:
+m1--Student
+m1---Clg
+m1--Student ends
+
+***************************************************
+
+2. Multilevel
+
+class Clg:
+	pass
+class Teacher(Clg):
+	pass
+class Student(Teacher):
+	pass
+
+output 1:
+m1--student
+m1--Teacher
+m1--clg
+
+output 2:
+m1--student
+m1--Teacher
+m1--clg
+m1--Teacher ends
+m1--Student ends
+
+**************************************************
+
+3. Multiple
+class Clg:
+	pass
+class Teacher:
+	pass
+class Student(Teacher, Clg):
+	pass
+
+
+output 1:
+m1--student
+m1--teacher
+m1--clg
+
+output 2:
+m1--student
+m1--Teacher
+m1--clg
+m1--Teacher ends
+m1--Student ends
+
+
+*************************************************
+4.Hierarchical
+
+class Clg:
+	pass
+class Teacher(Clg):
+	pass
+class Student(Clg):
+	pass
+
+output 1:
+m1--Student
+m1--clg
+m1--teacher
+m1--clg
+
+output 2:
+m1--Student
+m1--clg
+m--student ends
+m1--teacher
+m1--clg
+m1--teacher ends
+
+
+****************************************************
+
+5. Hybrid(Diamond)
+
+output 1:
+
+m1--Student
+m1--teacher1
+m1--techer2
+m1--clg
+
+output 2:
+
+m1--Student
+m1--teacher1
+m1--techer2
+m1--clg
+m1--teacher 2 ends
+m1--teacher 1 ends
+m1--student ends

@@ -1,0 +1,59 @@
+1. Answer: c
+Explanation: The program has no error. “Hello World” is displayed. Execute in python shell to verify.
+
+2.Answer: b
+Explanation: setattr(obj,name,value) is used to set an attribute. If attribute doesn’t exist, then it would be created.
+
+
+3.Answer: c
+Explanation: Since, the __init__ special method has another argument a other than self, during object creation, one argument is required. For example: obj=test(“Hello”)
+
+
+4.Answer: a
+Explanation: It is possible to delete an object of the class. On further typing obj in the python shell, it throws an error because the defined object has now been deleted.
+
+5.Answer: c
+Explanation: This is because strings are immutable. Hence any change made isn’t reflected in the original string.
+
+6.Answer: d
+Explanation: Instantiation refers to creating an object/instance for a class.
+
+7.Answer: c
+Explanation: In the above code, obj.quantity has been initialised to 10. 
+There are a total of three items in the dictionary, price, quantity and bags. Hence, len(obj.__dict__) is 3.
+
+8.
+Ans : C
+Explanation: To create a class, use the keyword class
+
+
+9.Ans : B
+Explanation: All classes have a function called __init__(), which is always executed when the class is being initiated.
+
+
+10.Ans : B
+Explanation: The self parameter is a reference to the current instance of the class, and is used to access variables that belong to the class.
+
+
+
+11.Ans : C
+Explanation: You can delete properties on objects by using the del keyword
+
+
+12.Ans : B
+Explanation: Instance variable : A variable that is defined inside a method and belongs only to the current instance of a class.
+
+
+13.Ans : D
+Explanation: The class has a documentation string, which can be accessed via ClassName.__doc__.
+
+
+
+
+19.Ans :-  C
+Explanation:- obj is the reference variable here and an object will be created each time A() is called.So there will be 3 objects created.
+
+
+20. Ans :-  D
+Explanation:- It will throw an error as inside constructor, “count” is not defined.
+

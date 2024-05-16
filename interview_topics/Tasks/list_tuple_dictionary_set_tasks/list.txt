@@ -1,0 +1,100 @@
+1. Given a list, write a Python program to swap first and last element of the list.
+
+Examples: 
+
+Input : [12, 35, 9, 56, 24]
+Output : [24, 35, 9, 56, 12]
+
+Input : [1, 2, 3]
+Output : [3, 2, 1]
+
+
+
+2. Given a list in Python and provided the positions of the elements, write a program to swap the two elements in the list.
+ 
+
+Examples:  
+
+Input : List = [23, 65, 19, 90], pos1 = 1, pos2 = 3
+Output : [19, 65, 23, 90]
+
+Input : List = [1, 2, 3, 4, 5], pos1 = 2, pos2 = 5
+Output : [1, 5, 3, 4, 2]
+
+
+
+3.Given a list of numbers, the task is to write a Python program to find the second largest number in the given list.
+
+Examples: 
+
+Input: list1 = [10, 20, 4]
+Output: 10
+
+Input: list2 = [70, 11, 20, 4, 100]
+Output: 70
+
+
+4. list1 = [2, 2, 2, 4, 4, 4]
+remove all even numbers from list dont create new list.
+
+
+5.Given a list of numbers, write a Python program to count positive and negative numbers in a List. 
+
+Example:
+
+Input: list1 = [2, -7, 5, -64, -14]
+Output: pos = 2, neg = 3
+
+Input: list2 = [-12, 14, 95, 3]
+Output: pos = 3, neg = 1
+
+6.
+Given a list of numbers, write a Python program to remove multiple elements from a list based on the given condition.
+
+Example: 
+
+Input: [12, 15, 3, 10]
+Output: Remove = [12, 3], New_List = [15, 10]
+
+Input: [11, 5, 17, 18, 23, 50]
+Output: Remove = [1:5], New_list = [11, 50]
+
+
+
+7.Given a list of integers with duplicate elements in it. The task is to generate another list, which contains only the duplicate elements. In simple words, the new list should contain elements that appear as more than one.
+
+Examples:
+
+Input : list = [10, 20, 30, 20, 20, 30, 40, 50, -20, 60, 60, -20, -20]
+Output : output_list = [20, 30, -20, 60]
+Input :  list = [-1, 1, -1, 8]
+Output : output_list = [-1]
+
+
+8. The original list 1 : [[1, 2], [3, 4], [5, 6]]
+The original list 2 : [[3, 4], [5, 7], [1, 2]]
+The uncommon of two lists is : [[5, 6], [5, 7]]
+
+
+9.The original list is : [[4, 1, 6], [7, 8], [4, 10, 8]]
+The reverse sorted Matrix is : [[6, 4, 1], [8, 7], [10, 8, 4]]
+
+
+
+10.Given a List, extract all elements whose frequency is greater than K.
+
+Input : test_list = [4, 6, 4, 3, 3, 4, 3, 4, 3, 8], K = 3 
+Output : [4, 3] 
+Explanation : Both elements occur 4 times. 
+
+Input : test_list = [4, 6, 4, 3, 3, 4, 3, 4, 6, 6], K = 2 
+Output : [4, 3, 6] 
+Explanation : Occur 4, 3, and 3 times respectively.
+
+
+11. The original list is : [4, 5, 6, 7, 3, 9]
+Does list contain all elements in range : True
+
+
+
+

@@ -1,0 +1,98 @@
+Composition vs Aggregation 
+In composition objects are srtongly associated whereas in aggreagtion objects are weakly associated
+
+In composition, container object holds directly contained objects, where as in Aggregation container object just holds
+references of contained objects.
+
+******************************************************
+
+1. Composition / HAS-A-Relationship
+Without existing container object, if there is no chance of existing contained objects then container and contained 
+objects are strongly associated and this strong association is nothing but composition.
+
+e.g. class Department:
+		pass
+
+     class University:
+	def __init__(self):
+		self.department = Department() 
+     	
+
+u = University()
+Example: If a file is placed in a folder and that is folder is deleted. The file residing inside that folder will also get deleted at the time of folder deletion.
+
+*******************************************************
+
+2. Aggregation 
+without existing container object, if there is a chance of existing contained object, then container and contained 
+objetcs are weakly associated  and this weak association is nothing but Aggregation
+
+
+e.g. class Department:
+		pass
+
+     class University:
+	def __init__(self, dept):
+	        self.department = dept
+     	
+	
+d = Department()
+u = University(d)
+
+Example: A car needs a wheel for its proper functioning, but it may not require the same wheel. It may function with another wheel as well.
+
+*************************************************************
+
+1)Without using constructor, with using constructor and using setter getter:------
+public class Employee
+{
+   ....................eid;
+   ..................ename;		    ______originalSalary							    				   
+   .................esalary------------------|________extraSalary
+  			    				 			
+  ...................emob;
+}
+
+
+
+**********************************************************************
+2)Without using constructor, with using constructor and using setter getter:------
+public class Employee
+{
+   ....................eid;		       _________name
+   ..................ename;	------------------|
+			       |________nickName								    				   
+   			    							    				   
+   .................esalary
+  							 
+			 ___________firstMobNo
+  ...................emob---------------- |				  
+			|____________secondMobNo
+}
+
+
+
+****************************************************************************
+3)Using setter getter Only:------
+public class Employee
+{
+   ....................eid;
+   ..................ename;									    				   
+
+  							   _____________seniour
+			        ___________development----------------|
+  ...................edepartment--------------|				   |_____________junior
+			        |____________testing
+}
+--------------------------
+Composition vs Inheritance  
+ It’s big confusing among most of the people that both the concepts are pointing to Code Reusability then 
+what is the difference b/w Inheritance and Composition and when to use Inheritance and when to use Composition? 
+
+Inheritance is used where a class wants to derive the nature of parent class and then modify or extend the functionality of it. 
+Inheritance will extend the functionality with extra features allows overriding of methods, but in the case of Composition, 
+we can only use that class we can not modify or extend the functionality of it. It will not provide extra features. 
+Thus, when one needs to use the class as it without any modification, the composition is recommended and when one needs to change the behavior of the method in another class, 
+then inheritance is recommended.
+
+https://www.geeksforgeeks.org/inheritance-and-composition-in-python/

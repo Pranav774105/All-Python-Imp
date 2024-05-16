@@ -1,0 +1,631 @@
+
+
+----------------------------list---------------------------------
+
+Exercise 1: Reverse a list in Python
+Given:
+
+list1 = [100, 200, 300, 400, 500]
+Expected output:
+[500, 400, 300, 200, 100]
+
+***********************************************************
+
+Exercise 2: Concatenate two lists index-wise
+Write a program to add two lists index-wise. 
+Create a new list that contains the 0th index item from both the list, then the 1st index item, and so on till the last element. 
+any leftover items will get added at the end of the new list.
+
+Given:
+
+list1 = ["M", "na", "i", "Ke"]
+list2 = ["y", "me", "s", "lly"]
+
+['My', 'name', 'is', 'Kelly']
+ 
+************************************************************
+
+Exercise 3: Turn every item of a list into its square
+Given a list of numbers. write a program to turn every item of a list into its square.
+
+
+Given:
+
+numbers = [1, 2, 3, 4, 5, 6, 7]
+	[1, 4, 9, 16, 25, 36, 49]
+
+***********************************************************
+
+Exercise 4: Iterate both lists simultaneously
+Given a two Python list. Write a program to iterate both lists simultaneously
+ and display items from list1 in original order and items from list2 in reverse order.
+
+Given
+
+list1 = [10, 20, 30, 40]
+list2 = [100, 200, 300, 400]
+Expected output:
+
+10 400
+20 300
+30 200
+40 100
+
+**********************************************************
+
+Exercise 5: Add new item to list after a specified item
+Write a program to add item 7000 after 6000 in the following Python List
+
+Given:
+
+list1 = [10, 20, [300, 400, [5000, 6000], 500], 30, 40]
+Expected output:
+
+[10, 20, [300, 400, [5000, 6000, 7000], 500], 30, 40]
+
+*********************************************************
+
+Exercise 6: Replace list’s item with new value if found
+You have given a Python list. Write a program to find value 20 in the list, and if it is present, replace it with 200. Only update the first occurrence of an item.
+
+Given:
+
+list1 = [5, 10, 15, 20, 25, 50, 20]
+Expected output:
+
+[5, 10, 15, 200, 25, 50, 20]
+
+*********************************************************
+
+Exercise 7: Replace list’s item with new value if found
+You have given a Python list. Write a program to find value 20 in the list, and if it is present, replace it with 200. Only update the first occurrence of an item.
+
+Given:
+
+list1 = [5, 10, 15, 20, 25, 50, 20]
+Expected output:
+
+[5, 10, 15, 200, 25, 50, 20]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------set---------------------------------
+
+Exercise 1: Add a list of elements to a set
+sample_set = {"Yellow", "Orange", "Black"}
+sample_list = ["Blue", "Green", "Red"]
+
+
+Expected output:
+Note: Set is unordered.
+{'Green', 'Yellow', 'Black', 'Orange', 'Red', 'Blue'}
+
+***********************************
+
+Exercise 2: Return a new set of identical items from two sets
+Given:
+
+set1 = {10, 20, 30, 40, 50}
+set2 = {30, 40, 50, 60, 70}
+Expected output:
+
+{40, 50, 30}
+
+************************************
+
+Exercise 3: Get Only unique items from two sets
+Write a Python program to return a new set with unique items from both sets by removing duplicates.
+
+Given:
+
+set1 = {10, 20, 30, 40, 50}
+set2 = {30, 40, 50, 60, 70}
+Expected output:
+
+{70, 40, 10, 50, 20, 60, 30}
+
+*************************************
+
+4. Update the first set with items that don’t exist in the second set
+Given:
+
+set1 = {10, 20, 30}
+set2 = {20, 40, 50}
+Expected output:
+
+set1 {10, 30}
+
+
+***********************************
+
+Exercise 5: Remove items from the set at once
+Write a Python program to remove items 10, 20, 30 from the following set at once.
+
+Given:
+
+set1 = {10, 20, 30, 40, 50}
+
+Expected output:
+
+{40, 50}
+
+**********************************
+
+Exercise 6: Return a set of elements present in Set A or B, but not both
+Given:
+
+set1 = {10, 20, 30, 40, 50}
+set2 = {30, 40, 50, 60, 70}
+Expected output:
+
+{20, 70, 10, 60}
+
+***********************************
+
+Exercise 7: Check if two sets have any elements in common. If yes, display the common elements
+Given:
+
+set1 = {10, 20, 30, 40, 50}
+set2 = {60, 70, 80, 90, 10}
+
+Expected output:
+
+Two sets have items in common
+{10}
+
+**********************************
+
+Exercise 8: Update set1 by adding items from set2, except common items
+Given:
+
+set1 = {10, 20, 30, 40, 50}
+set2 = {30, 40, 50, 60, 70}
+Expected output:
+
+{70, 10, 20, 60}
+
+
+***********************************
+Remove items from set1 that are not common to both set1 and set2
+
+Given:
+
+set1 = {10, 20, 30, 40, 50}
+set2 = {30, 40, 50, 60, 70}
+Expected output:
+
+{40, 50, 30}
+*********************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------dict---------------------------------
+Exercise 1: Convert two lists into a dictionary
+Below are the two lists. Write a Python program to convert them into a dictionary in a way that item from 
+list1 is the key and item from list2 is the value
+
+keys = ['Ten', 'Twenty', 'Thirty']
+values = [10, 20, 30]
+
+Expected output:
+{'Ten': 10, 'Twenty': 20, 'Thirty': 30}
+
+*************************************************************************
+
+Exercise 2: Merge two Python dictionaries into one
+dict1 = {'Ten': 10, 'Twenty': 20, 'Thirty': 30}
+dict2 = {'Thirty': 30, 'Fourty': 40, 'Fifty': 50}
+Expected output:
+
+{'Ten': 10, 'Twenty': 20, 'Thirty': 30, 'Fourty': 40, 'Fifty': 50}
+
+*************************************************************************
+
+Exercise 3: Print the value of key ‘history’ from the below dict
+sampleDict = {
+    "class": {
+        "student": {
+            "name": "Mike",
+            "marks": {
+                "physics": 70,
+                "history": 80
+            }
+        }
+    }
+}
+Expected output:
+
+80
+*************************************************************************
+
+
+Exercise 4: Initialize dictionary with default values
+In Python, we can initialize the keys with the same values.
+
+Given:
+
+employees = ['Kelly', 'Emma']
+defaults = {"designation": 'Developer', "salary": 8000}
+
+Expected output:
+{'Kelly': {'designation': 'Developer', 'salary': 8000}, 'Emma': {'designation': 'Developer', 'salary': 8000}}
+
+***************************************************************************
+
+Exercise 5: Create a dictionary by extracting the keys from a given dictionary
+
+Write a Python program to create a new dictionary by extracting the mentioned keys from the below dictionary.
+
+Given dictionary:
+
+sample_dict = {
+    "name": "Kelly",
+    "age": 25,
+    "salary": 8000,
+    "city": "New york"}
+
+# Keys to extract
+keys = ["name", "salary"]
+
+Expected output:
+
+{'name': 'Kelly', 'salary': 8000}
+
+******************************************************************************
+
+Exercise 6: Delete a list of keys from a dictionary
+Given:
+
+sample_dict = {
+    "name": "Kelly",
+    "age": 25,
+    "salary": 8000,
+    "city": "New york"
+}
+
+# Keys to remove
+keys = ["name", "salary"]
+Expected output:
+
+{'city': 'New york', 'age': 25}
+
+*****************************************************************************
+
+
+Exercise 7: Check if a value exists in a dictionary
+We know how to check if the key exists in a dictionary. Sometimes it is required to check if the given value is present.
+
+Write a Python program to check if value 200 exists in the following dictionary.
+
+Given:
+
+sample_dict = {'a': 100, 'b': 200, 'c': 300}
+Expected output:
+
+200 present in a dict
+
+**************************************************************************
+
+Exercise 8: Rename key of a dictionary
+Write a program to rename a key city to a location in the following dictionary.
+
+Given:
+
+sample_dict = {
+  "name": "Kelly",
+  "age":25,
+  "salary": 8000,
+  "city": "New york"
+}
+Expected output:
+
+{'name': 'Kelly', 'age': 25, 'salary': 8000, 'location': 'New york'}
+
+**************************************************************************
+
+
+Exercise 9: Get the key of a minimum value from the following dictionary
+sample_dict = {
+  'Physics': 82,
+  'Math': 65,
+  'history': 75
+}
+Expected output:
+
+Math
+
+
+***************************************************************************
+
+Exercise 10: Change value of a key in a nested dictionary
+Write a Python program to change Brad’s salary to 8500 in the following dictionary.
+
+Given:
+
+sample_dict = {
+    'emp1': {'name': 'Jhon', 'salary': 7500},
+    'emp2': {'name': 'Emma', 'salary': 8000},
+    'emp3': {'name': 'Brad', 'salary': 500}
+}
+Expected output:
+
+{
+   'emp1': {'name': 'Jhon', 'salary': 7500},
+   'emp2': {'name': 'Emma', 'salary': 8000},
+   'emp3': {'name': 'Brad', 'salary': 8500}
+}
+
+
+****************************************************************************
+
+Exercise 11. Write a Python script to check whether a given key already exists in a dictionary.
+{'name': 'Kelly', 'age': 25, 'salary': 8000, 'location': 'New york'}
+
+expected output: True/ False
+
+****************************************************************************
+
+Exercise 12. Write a Python program to sum all the items in a dictionary.
+
+my_dict = {'data1':100,'data2':-54,'data3':247}
+
+expected output: 293
+
+*****************************************************************************
+
+Exercise 13. Write a Python program to combine two dictionary adding values for common keys. Go to the editor
+d1 = {'a': 100, 'b': 200, 'c':300}
+d2 = {'a': 300, 'b': 200, 'd':400}
+Sample output:{'a': 400, 'b': 400, 'd': 400, 'c': 300}
+
+******************************************************************************
+
+Exercise 14. Write a Python program to print all unique values in a dictionary. Go to the editor
+Sample Data : [{"V":"S001"}, {"V": "S002"}, {"VI": "S001"}, {"VI": "S005"}, {"VII":"S005"}, {"V":"S009"},{"VIII":"S007"}]
+Expected Output : Unique Values: {'S005', 'S002', 'S007', 'S001', 'S009'}
+
+******************************************************************************
+
+Exercise 15. Write a Python program to create and display all combinations of letters, selecting each letter from a different key in a dictionary. 
+Go to the editor
+Sample data : {'1':['a','b'], '2':['c','d']}
+Expected Output:
+ac
+ad
+bc
+bd
+******************************************************************************
+
+Exercise 16 :Write a Python program to create a dictionary from a string.
+Note: Track the count of the letters from the string.
+Sample list : ['a', 'a', 'b', 'b', 'c', 'd', 'd', 'e', 'e', 'e']
+Expected output: {'a': 2, 'b': 2, 'c': 1, 'd': 2, 'e': 3}
+
+******************************************************************************
+
+Exercise 17 : Write a Python program to drop empty Items from a given Dictionary. Go to the editor
+Original Dictionary:
+{'c1': 'Red', 'c2': 'Green', 'c3': None}
+New Dictionary after dropping empty items:
+{'c1': 'Red', 'c2': 'Green'}
+
+*****************************************************************************
+
+Exercise 18 : Write a Python program to filter the height and width of students, which are stored in a dictionary. Go to the editor
+Original Dictionary:
+{'Cierra Vega': (6.2, 70), 'Alden Cantrell': (5.9, 65), 'Kierra Gentry': (6.0, 68), 'Pierre Cox': (5.8, 66)}
+Height > 6ft and Weight >= 70kg:
+{'Cierra Vega': (6.2, 70)}
+
+****************************************************************************
+
+Exercise 19 : Write a Python program to create a dictionary grouping a sequence of key-value pairs into a dictionary of lists. Go to the editor
+Original list:
+[('yellow', 1), ('blue', 2), ('yellow', 3), ('blue', 4), ('red', 1)]
+Grouping a sequence of key-value pairs into a dictionary of lists:
+{'yellow': [1, 3], 'blue': [2, 4], 'red': [1]}
+
+****************************************************************************
+
+Exercise 20 : Write a Python program to split a given dictionary of lists into list of dictionaries. Go to the editor
+Original dictionary of lists:
+{'Science': [88, 89, 62, 95], 'Language': [77, 78, 84, 80]}
+Split said dictionary of lists into list of dictionaries:
+[{'Science': 88, 'Language': 77}, {'Science': 89, 'Language': 78}, {'Science': 62, 'Language': 84}, {'Science': 95, 'Language': 80}]
+
+****************************************************************************
+
+Exercise 21 : Write a Python program to combines two or more dictionaries, creating a list of values for each key. Go to the editor
+Sample Output:
+Original dictionaries:
+{'w': 50, 'x': 100, 'y': 'Green', 'z': 400}
+{'x': 300, 'y': 'Red', 'z': 600}
+Combined dictionaries, creating a list of values for each key:
+{'w': [50], 'x': [100, 300], 'y': ['Green', 'Red'], 'z': [400, 600]}
+
+****************************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------string---------------------------------
+
+
+
+# Strings Tasks
+
+Exercise 1 : Convert uppercase to lowercase
+Given : str1 = 'ADHYAYAN'
+Expected Output: str2 = 'adhyayan'
+
+Exercise 2: Find the index position and occurance(count) of D in string
+Given : str1 ='ADHYAYAND'
+Expected output:
+index position = 1
+occurance = 2
+
+Exercise 3: Create a string made of the first and last character
+Given: str1 = "Adhyayan" 
+Expected Output: str2 = 'An'
+
+Exercise 4: Replace the String
+Given: str1 = 'I am Student'
+Expected Output: 'I am Software Developer'
+
+Exercise 5: Do perform addition of all digits present in string
+Given:
+str1 = "12345"
+Expected Outcome:
+addition of digit = 15
+
+Exercise 6: Arrange string characters such that lowercase letters should come first
+Given: str1 = 'ADHYayan'
+Expected Output:str2 = 'ayanADHY'
+
+Exercise 7: Write a program to count occurrences of all characters within a string
+Given:
+str1 = "Apple"
+Expected Outcome:
+
+{'A': 1, 'p': 2, 'l': 1, 'e': 1}
+
+******************************************************************************
+Exercise 8: Reverse a given string
+Given:
+
+str1 = "PYnative"
+Expected Output:
+evitanYP
+
+******************************************************************************
+Exercise 9: Find the last position of a given substring
+Write a program to find the last position of a substring “Emma” in a given string.
+
+Given:
+
+str1 = "Emma is a data scientist who knows Python. Emma works at google."
+Expected Output:
+
+Last occurrence of Emma starts at index 43
+
+*********************************************************************************
+
+Exercise 10: Split a string on hyphens
+Write a program to split a given string on hyphens and display each substring.
+
+Given:
+
+str1 = Emma-is-a-data-scientist
+Expected Output:
+Displaying each substring
+
+Emma
+is
+a
+data
+scientist
+************************************************************************
+Exercise 11: Remove False values from a list of strings
+Given:
+
+str_list = ["Emma", "Jon", "", "Kelly", None, "Eric", ""]
+Expected Output:
+
+Original list of sting
+['Emma', 'Jon', '', 'Kelly', None, 'Eric', '']
+
+After removing empty strings
+['Emma', 'Jon', 'Kelly', 'Eric']
+
+
+
+
+
+Exercise 12: Remove special symbols / punctuation from a string
+Given:
+
+str1 = "/*Jon is @developer & musician"
+Expected Output:
+
+"Jon is developer musician"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

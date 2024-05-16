@@ -1,0 +1,74 @@
+*Secondary Reference :-
+1)Without using constructor, with using constructor and using setter getter:------
+public class Employee
+{
+   ....................eid;
+   ..................ename;		    ______originalSalary							    				   
+   .................esalary------------------|________extraSalary
+  			    				 			
+  ...................emob;
+}
+
+public class Salary
+{
+
+}
+public class Test
+{
+   main()
+  {
+   }
+}
+
+**********************************************************************
+2)Without using constructor, with using constructor and using setter getter:------
+public class Employee
+{
+   ....................eid;		       _________name
+   ..................ename;	------------------|
+			       |________nickName								    				   
+   			    							    				   
+   .................esalary
+  							 
+			 ___________firstMobNo
+  ...................emob---------------- |				  
+			|____________secondMobNo
+}
+
+public class Test
+{
+	public static void main(String args[])
+	{
+
+
+	}
+}
+
+
+****************************************************************************
+3)Using setter getter Only:------
+public class Employee
+{
+   ....................eid;
+   ..................ename;									    				   
+
+  							   _____________senior
+			        ___________development----------------|
+  ...................edepartment--------------|				   |_____________junior
+			        |____________testing
+}
+public class Test
+{
+	public static void main(String args[])
+	{
+
+
+	}
+}
+public class Department
+{
+}
+public class Post
+{
+}
+

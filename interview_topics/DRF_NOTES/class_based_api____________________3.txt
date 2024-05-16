@@ -1,0 +1,33 @@
+Class-Based API's :
+		Rest Framework APIView class is a subclass of Django's View Class.
+
+		APIView is different than Django's View Class.
+
+		In Django View, we can define the handler methods for get and post requests. In APIView of rest_framework
+		we can define the handler methods like get, post, put, patch, and delete.
+
+
+		How to create class-based API in the django rest framework
+
+
+		from rest_framework.views import APIView
+		from rest_framework.response import Response
+
+
+		class SecondAPI(APIView):
+			def get(self, request, *args, **kwargs):
+				"Bussiness Logic for get method"
+				return Response(data,status)
+
+
+		urls.py -> app level urls.py file
+		from app_name.views import SecondAPI
+		urlpatterns = [
+			path('second/', SecondAPI.as_view()),
+		]
+
+
+		
+		
+
+		

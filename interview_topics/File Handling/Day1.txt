@@ -1,0 +1,73 @@
+File used for permanent storage
+used for small amount of data
+
+*******************
+Temparory data
+l = []
+##for i in range(5):
+##    l.append(i)
+print(l)
+
+*******************
+
+Types of files:
+1)Binary Files:
+
+Files having specific encoding, Binary files will be encoded in the binary format,
+which can be understood only by a computer or machine.
+
+ExamplesDocument files: .pdf, .doc, .xls etc.
+Image files: .png, .jpg, .gif, .bmp etc.
+Video files: .mp4, .3gp, .mkv, .avi etc
+
+
+
+2)Text Files:
+Text files don’t have any specific encoding and it can be opened in normal text editor itself.
+
+ExamplesWeb standards: html, XML, CSS, JSON etc.
+Source code: c, app, js, .py, java etc.
+Documents: txt, tex, RTF etc.
+
+*******************
+
+Operating/Processing a File in Python:
+Usually we’ve to follow the following sequence while processing files in Python.
+
+	1. Open the file.
+	2. Perform the operations (Reading, Writing etc.).
+	3. Close the file.
+
+To perform these operations we’ll use many built-in functions like open(), read(),
+write(), close() and many more….
+
+Opening a File:
+When you want to work with a file, the first thing to do is to open it. This is done by
+invoking the open(), a built-in function.
+open() has a single required argument that is the path to the file.
+open() returns, the file object, usually called as “handle”.
+Note: Always make sure that an open file is closed properly.
+
+
+******************************************************************************
+open() The open() function is used to open file.
+
+r --> is default mode -- File not found Error if file is not there can read only
+	read() Reads file and return one big string.
+	read(n) Reads ‘n’ characters from the file till end of the file
+	readline() Reads file and return one line at a time.
+	readlines() Reads file and returns a list of lines.
+	readable() Returns true if the file is readable
+	writable() Returns true if the file is writable
+	
+w --> overwrite data if file available else will create new file can write only
+	write() Writes a string data to a file.
+	writelines() Writes a list of strings.
+	
+a --> can only append(write) and cant seek and read data as not readable only writable
+		
+close() Closes file & free up system resources.
+	This is critical because if the file is not closed properly, it can be corrupted or not available to other parts of the program. 
+	Data loss is not acceptable, so we need to ensure that no matter what the file is closed when we’re done with it.
+
+

@@ -1,0 +1,53 @@
+import MySQLdb
+conn = MySQLdb.connect(host="127.0.0.1", user="root", password="root", db="pdbc")
+conn.autocommit('on')
+curs = conn.cursor()
+def add_student():    
+    roll = int(input('Enter Your Roll Number Here'))
+    name = input('Enter Your name here')
+    query = f'insert into student values({roll}, "{name}")'
+    curs.execute(query)
+    print('Record Added...\n')
+
+
+def show_students():
+    query = 'select * from student'
+    curs.execute(query)
+    for record in curs:
+        print(record, '\n')
+
+
+def update_info():
+    roll = int(input('Enter roll Number here'))
+    name = input('Enter new name')
+    query = f'update student set name = "{name}" where roll = {roll}'
+    curs.execute(query)
+    print('Updated\n')
+
+def delete_info():
+    roll = int(input('Enter Your roll here'))
+    query = f'delete from student where roll = {roll}'
+    curs.execute(query)
+    print('Deleted \n')
+
+
+while True:
+    choice = int(input('Enter Your Choice\n'\
+                       '1.Add Student\n'\
+                       '2.Show Students\n'\
+                       '3.Update Student Info\n'\
+                       '4.Delete student Info\n'
+                       ))
+
+    match choice:
+        case 1:
+            add_student()
+        case 2:
+            show_students()
+        case 3:
+            update_info()
+        case 4:
+            delete_info()
+        case _:
+            print('Enter valid choice')
+

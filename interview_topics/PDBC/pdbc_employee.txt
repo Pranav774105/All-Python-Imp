@@ -1,0 +1,116 @@
+import MySQLdb
+
+# Connect to the MySQL database
+conn = MySQLdb.connect(user='root', password='root', host='127.0.0.1', db='b30pdbc')
+curs = conn.cursor()
+
+while True:
+    ch = int(input('\n\t***** MENU *****'\
+                   '\n\t1. CREATE TABLE'\
+                   '\n\t2. INSERT DATA'\
+                   '\n\t3. RETRIEVE DATA'\
+                   '\n\t4. DELETE DATA'\
+                   '\n\t5. UPDATE DATA'\
+                   '\n\t6. EXIT'\
+                   '\n\tEnter Your Choice:'))
+
+    # CREATE TABLE
+    if ch == 1:
+        query = 'create table employee(emp_id int, name varchar(50), salary float);'
+        curs.execute(query)
+
+    # INSERT DATA
+    elif ch == 2:
+        emp_id = int(input('Enter Employee ID:'))
+        name = input('Enter Name:')
+        salary = float(input('Enter Salary:'))
+
+        query = f'insert into employee values({emp_id}, "{name}", {salary});'
+        curs.execute(query)
+
+    # RETRIEVE DATA
+    elif ch == 3:
+        ch1 = int(input('\nDo you want to Display:'\
+                        '\n1. ALL DATA'\
+                        '\n2. PARTICULAR RECORD'\
+                        '\nEnter your Choice:'))
+        if ch1 == 1:
+            query = 'select * from employee;'
+            curs.execute(query)
+            for i in curs:
+                print(i)
+        elif ch1 == 2:
+            ch2 = int(input('\nThrough which parameter you want to retrieve the Record:'\
+                            '\n1. EMPLOYEE ID'\
+                            '\n2. NAME'\
+                            '\n3. SALARY'\
+                            '\nEnter Your Choice:'))
+            if ch2 == 1:
+                emp_id_ref = int(input('Enter the Reference Employee ID:'))
+                query = f'select * from employee where emp_id = {emp_id_ref};'
+            elif ch2 == 2:
+                name_ref = input('Enter the Reference Name:')
+                query = f'select * from employee where name = "{name_ref}";'
+            elif ch2 == 3:
+                salary_ref = float(input('Enter the Reference Salary:'))
+                query = f'select * from employee where salary = {salary_ref};'
+
+            curs.execute(query)
+            for i in curs:
+                print(i)
+
+    # DELETE DATA
+    elif ch == 4:
+        ch1 = int(input('Do you want to DELETE:'\
+                        '\n1. ALL RECORDS'\
+                        '\n2. PARTICULAR RECORD'\
+                        '\nEnter Your Choice:'))
+        if ch1 == 1:
+            query = 'delete from employee;'
+            curs.execute(query)
+        elif ch1 == 2:
+            ch2 = int(input('\nThrough which parameter you want to DELETE the Record:'\
+                            '\n1. EMPLOYEE ID'\
+                            '\n2. NAME'\
+                            '\n3. SALARY'\
+                            '\nEnter Your Choice:'))
+            if ch2 == 1:
+                emp_id_ref = int(input('Enter Reference Employee ID:'))
+                query = f'delete from employee where emp_id = {emp_id_ref};'
+            elif ch2 == 2:
+                name_ref = input('Enter the Reference Name:')
+                query = f'delete from employee where name = "{name_ref}";'
+            elif ch2 == 3:
+                salary_ref = float(input('Enter the Reference Salary:'))
+                query = f'delete from employee where salary = {salary_ref};'
+
+            curs.execute(query)
+
+    # UPDATE DATA
+    elif ch == 5:
+        ch1 = int(input('\nWhat do you want to UPDATE?'\
+                        '\n1. EMPLOYEE ID'\
+                        '\n2. NAME'\
+                        '\n3. SALARY'\
+                        '\nEnter Your Choice:'))
+        if ch1 == 1:
+            emp_id_new = int(input('Enter the new Employee ID:'))
+            emp_id_ref = int(input('Enter the Reference Employee ID:'))
+            query = f'update employee set emp_id = {emp_id_new} where emp_id = {emp_id_ref};'
+        elif ch1 == 2:
+            name_new = input('Enter the new Name:')
+            name_ref = input('Enter the Reference Name:')
+            query = f'update employee set name = "{name_new}" where name = "{name_ref}";'
+        elif ch1 == 3:
+            salary_new = float(input('Enter the new Salary:'))
+            salary_ref = float(input('Enter the Reference Salary:'))
+            query = f'update employee set salary = {salary_new} where salary = {salary_ref};'
+
+        curs.execute(query)
+
+    elif ch == 6:
+        break
+
+    conn.commit()
+
+conn.close()

@@ -1,0 +1,17 @@
+# Normal way
+l = [2, 2, 6, 4, 5, 8]
+for i in l:
+    if i%2 == 0:
+        l.remove(i)
+print(l)
+
+
+# Using While Loop
+l = [2, 3, 6, 4, 5, 8]
+i = 0
+while i< len(l):
+    if l[i]%2 == 0:
+        l.remove(l[i])
+    else:
+        i = i + 1
+print(l)

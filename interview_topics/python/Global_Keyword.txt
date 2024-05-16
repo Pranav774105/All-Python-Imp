@@ -1,0 +1,128 @@
+What is the purpose of global keywords in python?
+A global keyword is a keyword that allows a user to modify a variable outside of the current scope. It is used to create global variables in python from a non-global scope i.e inside a function. Global keyword is used inside a function only when we want to do assignments or when we want to change a variable. Global is not needed for printing and accessing.
+
+Rules of global keyword:
+
+If a variable is assigned a value anywhere within the function’s body, it’s assumed to be a local unless explicitly declared as global.
+Variables that are only referenced inside a function are implicitly global.
+We Use a global keyword to use a global variable inside a function.
+There is no need to use global keywords outside a function.
+Use of global keyword in Python: To access a global variable inside a function there is no need to use a global keyword. 
+
+Global keyword in the python example
+Example 1: Accessing global Variable From Inside a Function
+
+# Python program showing no need to
+# use global keyword for accessing
+# a global value
+ 
+# global variable
+a = 15
+b = 10
+ 
+# function to perform addition
+ 
+ 
+def add():
+    c = a + b
+    print(c)
+ 
+ 
+# calling a function
+add()
+Output:
+
+25
+If we need to assign a new value to a global variable then we can do that by declaring the variable as global.
+
+Example 2: Modifying Global Variable From Inside the Function
+# Python program showing to modify
+# a global value without using global
+# keyword
+a = 15
+ 
+# function to change a global value
+def change():
+    # increment value of a by 5
+    a = a + 5
+    print(a)
+ 
+change()
+Output:
+
+UnboundLocalError: local variable 'a' referenced before assignment
+This output is an error because we are trying to assign a value to a variable in an outer scope. This can be done with the use of a global variable.
+
+Example 3: Changing Global Variable From Inside a Function using global
+# Python program to modify a global
+# value inside a function
+ 
+x = 15
+ 
+def change():
+    # using a global keyword
+    global x
+ 
+    # increment value of a by 5
+    x = x + 5
+    print("Value of x inside a function :", x)
+ 
+change()
+print("Value of x outside a function :", x)
+Output:
+
+Value of x inside a function : 20
+Value of x outside a function : 20
+In the above example, we first define x as a global keyword inside the function change(). The value of x is then incremented by 5, ie. x=x+5 and hence we get the output as 20. As we can see by changing the value inside the function change(), the change is also reflected in the value outside the global variable.
+
+Global variables across Python modules 
+The best way to share global variables across different modules within the same program is to create a special module (often named config or cfg). Import the config module in all modules of your application; the module then becomes available as a global name. There is only one instance of each module and so any changes made to the module object get reflected everywhere. For Example, sharing global variables across modules.
+
+Code 1: Create a config.py file to store global variables
+x = 0
+y = 0
+z = "none"
+Code 2: Create a modify.py file to modify global variables
+import config
+config.x = 1
+config.y = 2
+config.z = "geeksforgeeks"
+Here we have modified the value of x, y, and z. These variables were defined in the module config.py, hence we have to import config module and we can use config.variable_name to access these variables.
+
+Create a main.py file to modify global variables
+import config
+import modify
+print(config.x)
+print(config.y)
+print(config.z)
+Output:
+
+1
+2
+geeksforgeeks
+Global in Nested functions
+In order to use global inside a nested function, we have to declare a variable with a global keyword inside a nested function
+
+# Python program showing a use of
+# global in nested function
+ 
+def add():
+    x = 15
+    def change():
+        global x
+        x = 20
+    print("Before making changing: ", x)
+    print("Making change")
+    change()
+    print("After making change: ", x)
+ 
+add()
+print("value of x", x)
+Output:
+
+Before making changing:  15
+Making change
+After making change:  15
+value of x 20
+In the above example Before and after making change(), the variable x takes the value of local variable i.e x = 15. Outside of the add() function, the variable x will take value defined in the change() function i.e x = 20. because we have used global keyword in x to create global variable inside the change() function (local scope).
+

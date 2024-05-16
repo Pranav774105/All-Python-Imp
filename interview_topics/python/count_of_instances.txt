@@ -1,0 +1,11 @@
+import time
+import sys
+class Test:
+    def __init__(self):
+        print('Object Initialization...')
+
+t1 = Test()
+t2 = t1
+t3 = t2
+t4 = t3
+print(sys.getrefcount(t1))

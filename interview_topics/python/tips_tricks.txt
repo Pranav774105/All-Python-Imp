@@ -1,0 +1,92 @@
+1. How to measure the time elapsed to execute your code in Python
+import time
+startTime = time.time()
+l = []
+for i in range(1, 20, 1):
+    l.append(i)
+endTime = time.time()
+totalTime = endTime - startTime
+
+print('Total time required to execute code is: ', totalTime)
+
+***********************************************
+
+2. Get the difference between the two Lists
+list1 = ['Scott', 'Eric', 'Kelly', 'Emma', 'Smith']
+list2 = ['Scott', 'Eric', 'Kelly']
+
+set1 = set(list1)
+set2 = set(list2)
+
+list3 = list(set1.symmetric_difference(set2))
+print(list3)
+
+*********************************************
+
+3.Calculate memory is being used by an object in Python
+import sys
+
+list1 = ['Scott', 'Eric', 'Kelly', 'Emma', 'Smith']
+print("size of list = ",sys.getsizeof(list1))
+
+name = 'cjc, pune'
+print("size of name = ",sys.getsizeof(name))
+
+************************************************
+
+4.Find if all elements in a list are identical
+listOne = [20, 20, 20, 20]
+print('All element in listOne are', 'duplicates' if listOne.count(listOne[0]) == len(listOne) else 'not duplicates')
+
+listTwo = [20, 20, 20, 50]
+print('All elements in listOne are', 'duplicate' if listTwo.count(listTwo[0]) == len(listTwo) else 'not duplicates')
+
+***********************************************
+
+5. How to efficiently compare two unordered lists
+one = [33, 22, 11, 44, 55]
+two = [22, 11, 44, 55, 33]
+
+print(sorted(one) == sorted(two))
+
+**********************************************
+
+6. How to check if all elements in a list are unique
+listOne = [123, 345, 468, 23, 567]
+l = []
+i = 0
+for i in range(len(listOne)-1, -1, -1):
+    if listOne[i] not in l:
+        l.append(listOne[i])
+print(l)
+print('All elements are :', 'unique' if sorted(listOne) == sorted(l) else 'not unique')
+
+*********************************************
+
+7. Use enumerate
+Use enumerate() function when you want to access the list element and also want to keep track of the list items’ indices.
+listOne = [123, 345, 456, 23]
+print('Using enumerate')
+for index, element in enumerate (listOne):
+    print('Index [', index, ']', 'Value', element)
+ 
+********************************************
+
+8.Merge two dictionaries in a single expression
+currentEmployee = {1: 'Scott', 2: 'Eric', 3:'Kelly'}
+formerEmployee = {2: 'Eric', 4: 'Emma'}
+
+allEmployee = {**currentEmployee, **formerEmployee}
+print(allEmployee)
+
+********************************************
+
+9.Tip and Trick 10: Convert two lists into a dictionary
+ItemId = [54, 65, 76]
+names = ["Hard Disk", "Laptop", "RAM"]
+
+itemDictionary = dict(zip(ItemId, names))
+
+print(itemDictionary)
+
+*******************************************

@@ -1,0 +1,43 @@
+map task
+
+1.Double all numbers using map and lambda # l = [20,30,40,50]
+2.Add two lists using map and lambda # [10,20,30,40] [1,2,3,4]
+3.'Data Science Academy offers the best data analysis courses in Brazil'
+expected out:
+['DATA', 'data', 4]
+['SCIENCE', 'science', 7]
+['ACADEMY', 'academy', 7]
+['OFFERS', 'offers', 6]
+['THE', 'the', 3]
+['BEST', 'best', 4]
+['DATA', 'data', 4]
+['ANALYSIS', 'analysis', 8]
+['COURSES', 'courses', 7]
+['IN', 'in', 2]
+['BRAZIL', 'brazil', 6] by using map
+***************************************
+
+filter task
+take string input = 'abcdefghijklmn'
+1. function that filters vowels ['a','e','i','o', 'u']
+
+take list input = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+2. a list contains both even and odd numbers # 2 programs 2 lists
+
+3. ['cat', 'mat', 'bat', 'bbb', 'ccc', 'ddd'] # filter having 'a'
+
+4. Using the filter function, find the values that are common to the two lists below
+a = [1,2,3,5,7,9]
+b = [2,3,5,6,7,8]
+
+out: [2, 3, 5, 7]
+5.myStrings = ("demigod", "rewire", "madam", "fortran", "python", "xamarin", "salas", "PHP")
+output: ['madam', 'salas', 'PHP']
+
+***************************************
+reduce task
+
+1. using reduce to compute sum of list [1,2,3,4,5]
+2. ['cat', 'mat', 'bat', 'bbb', 'ccc', 'ddd'] # reduce 'cat mat bat bbb ccc ddd'
+3. using reduce multiply all elements of list [1,2,3,4,5]
+

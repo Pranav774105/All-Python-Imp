@@ -1,0 +1,65 @@
+from operator import attrgetter
+class Item:
+    def __init__(self, name, price, discount):
+        self.name = name
+        self.price = price
+        self.discount = discount
+
+    def __str__(self):
+        return f' Name is : {self.name}\n Price is :{self.price}\n '\
+                f'Discount is :{self.discount}\n {"*"*10}'
+item_obj1 = Item('Doritos', 3, 10)
+item_obj2 = Item('Crisps & Chips', 5, 3)
+item_obj3 = Item('Cheetos', 4.48, 5)
+item_obj4 = Item('Cheetos', 6.58, 8)
+item_obj5 = Item('Pringles', 1.68, 2)
+
+
+
+
+
+
+list_obj = [item_obj1, item_obj2, item_obj3, item_obj4, item_obj5]
+
+
+
+
+def getname(obj):
+    return obj.name
+
+def getdiscount(obj):
+    return obj.discount
+
+print('Before Sorting')
+for i in list_obj:
+    print(i)
+
+#1. Way**************
+
+list_obj.sort(key = lambda x : x.price)
+print('Sort by name')
+for i in list_obj:
+    print(i)
+
+
+
+
+
+
+
+
+#2. Way************
+list_obj.sort(key = getname)
+for i in list_obj:
+    print(i)
+
+
+
+
+
+
+
+#3. Way************
+list_obj.sort(key = attrgetter('name', 'discount'))
+for i in list_obj:
+    print(i)

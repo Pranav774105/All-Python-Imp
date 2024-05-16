@@ -1,0 +1,33 @@
+
+How to Connect to MySQL Database in Python
+
+1. Install library mysqlclient.
+	pip install mysqlclient --> we have to externally download and install this library as it do not come with standard library of python.
+
+2. Import MySQLdb package
+	import MySQLdb
+
+3. Use the connect() function
+	conn = MySQLdb.connect( host="localhost",  user="yourusername",  password="yourpassword", db="db_name")	
+	
+	Use the connect() function of the MySQL Connector class with the required arguments to connect MySQL. 
+	It would return a MySQLConnection object if the connection established successfully
+
+4. Use the cursor() method
+	curs = conn.cursor()
+	Cursor class object
+	Use the cursor() method of a MySQLConnection object to create a cursor object to perform various SQL operations.
+
+5. Use the execute() method
+	query = 'select * from tbl_name'
+	curs.execute(query)
+	The execute() methods run the SQL query and return the result.
+	conn.commit() 
+	or
+	conn.autocommit('on')
+	is used to permanently save the changes done in the transaction in tables/databases.
+
+6. Close connection.
+	conn.close()
+	use connection.close() method to close open connections after your work completes.
+

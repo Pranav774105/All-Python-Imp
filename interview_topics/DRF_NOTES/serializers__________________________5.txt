@@ -1,0 +1,56 @@
+Serialization in Django Rest Framework:
+		Serialization is process to convert data from one form to another form.
+		Django Rest Framework Serializers will convert the python objects into JSON.
+		Serializers also provides the facility to convert JSON objects into python native objects.
+
+		Serializers allow complex data such as querysets and model instances to be converted to native Python 
+		datatypes that can then be easily rendered into JSON, XML or other content types. Serializers also provide
+		deserialization, allowing parsed data to be converted back into complex types, after first validating the
+		incoming data.
+		
+		The serializers in REST framework work very similarly to Django's Form and ModelForm classes.
+
+		Rest Framework provide a Serializer class which gives you a powerful, generic way to control the output of your responses,
+		as well as a ModelSerializer class which provides a useful shortcut for creating serializers that deal with 
+		model instances and querysets.
+
+
+
+How to Create Serializers in django rest framework:
+		Inside your application (the one you have created using py manage.py startapp command) you have to create
+		serializers.py module.
+
+		inside the serializers.py
+
+		from rest_framework import serializers
+
+
+		class PostSerializer(serializers.Serializer):
+				title = serializers.CharField(max_length=50)
+				content = serializers.CharField(max_length=255)
+
+
+
+		views.py
+
+		from . serializers import PostSerializer
+		from rest_framework.views import APIView
+		from rest_framework.response import Response
+
+
+		class PostAPI(APIView):
+
+    		def get(self,request):
+        		posts = Post.objects.all()
+        		serializer = PostSerializer(posts, many=True) # serializing the ORM queryset
+        		#serializer = PostSerializer(posts)
+        		return Response(data=serializer.data, status=status.HTTP_200_OK)
+
+
+    		def post(self, request):
+        		serializer = PostSerializer(data=request.data) # deserialization
+        		if serializer.is_valid():
+            			data = serializer.data #serialized data
+            			return Response(data=data, status=status.HTTP_201_CREATED)
+        		return Response(data=serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+				

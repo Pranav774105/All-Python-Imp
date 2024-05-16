@@ -1,0 +1,42 @@
+CLASS DECORATOR
+We have seen that decorators are callable that accepts and returns a callable. Since classes
+are callable, decorators are also used to decorate classes. Before we see class decorators, we should
+know one fact that objects are callable using __call__ method.
+
+Python has a set of built-in methods and __call__ is one of them. 
+The __call__ method enables a programmer to write classes where the instances behave like functions and can be called like a function. E.g.
+
+***************************************************************************************
+
+class Example:
+ def __init__(self):
+ 	print("Instance Created")
+ def __call__(self):
+ 	print("Instance is called via special method")
+e = Example()
+e() # __call__ method will be called automatically
+
+
+OUTPUT :
+Instance Created
+Instance is called via special method
+
+
+***************************************************************************************
+
+
+Now we will see how to decorate with class
+class MyDecorator:
+ def __init__(self, func):
+ 	self.func = func #self.func = m1
+
+ def __call__(self):
+ 	print("Before calling actual function")
+ 	self.func() #m1()
+ 	print("After calling actual function")
+
+@MyDecorator
+def m1():
+ print("m1 function")
+m1()
+

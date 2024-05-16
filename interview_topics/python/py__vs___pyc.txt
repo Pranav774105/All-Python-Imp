@@ -1,0 +1,4 @@
+.py --> source code(High level lang.)
+.pyc --> Byte Code(Intermediate lang.) --> compiled py file
+	machine code (low level lang.)
+py -m py_compile filename.

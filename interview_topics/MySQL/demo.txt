@@ -1,0 +1,23 @@
+Aggregate Functions:
+1. SUM ()
+	24. select sum(field1) from tbl_name;
+2. MAX ()
+	25. select max(field1) from tbl_name;
+3. MIN ()
+	26. select min(field1) from tbl_name;
+4. COUNT ()
+	27. select count(field1) from tbl_name;
+5. AVG()
+	28. select avg(field1) from tbl_name;
+
+DISTINCT Clause:
+	29. select distinct(field1) from tbl_name;
+
+ORDER BY Clause:
+	30. select * from tbl_name order by field1 asc/desc;
+
+GROUP BY Clause:
+	31. select field1, count(field1) from tbl_name group by(field1);
+
+LIMIT Clause:
+	32. select * from tbl_name where condition limit number; --> (offset, count)

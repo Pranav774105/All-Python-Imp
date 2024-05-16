@@ -1,0 +1,45 @@
+What is CSS?
+	CSS stands for Cascading Style Sheets
+	CSS is the language we use to style an HTML document. CSS describes how HTML elements should be displayed.
+
+Why is it called cascading in CSS?
+	The word cascading means that a style applied to a parent element will also apply to all children elements within the parent.
+	So, if you set the color of the body text to "red", all headings, paragraphs, and other text elements within the body will 
+	also get the same color (unless you specify something else)!
+
+
+
+Ways To Apply CSS to HTML document
+	1. inline 
+	2. internal 
+	3. external 
+
+
+priorities
+	1. Inline style (inside an HTML element)
+	2. External or internal style sheets (in the head section)
+	3. Browser default
+
+Types of simple selectors:
+	1. Universal selector (*)
+	2. Element selector (h1)
+	3. Group selector (h1, h2)
+	4. Class selector (.class_name)
+	5. id selector (#id_name) only one
+
+
+color, background-color, font-size, font-family, shadow, height, width, text align
+color--> rgb --> decimal --> rgb(0, 0, 0 to 255, 255, 255), hexdeciaml --> 
+#(000000 to ffffff), HSL(hue , saturation, lightness)
+
+
+comment /* content */
+Incorrect (space): margin-left: 20 px;
+Correct (nospace): margin-left: 20px;
+
+
+padding vs margin:
+	Margins are used to create space around elements, outside of any defined borders.
+	Padding is used to create space around an element's content, inside of any defined borders.
+
+color picker

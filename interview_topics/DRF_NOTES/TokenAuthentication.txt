@@ -1,0 +1,39 @@
+Token Authentication - 
+	Token authentication is one of the simple token-based authentication scheme. Token Authentication is appropriate
+for client-server setups, such as native desktop and mobile applications.
+
+	To use TokenAuthentication you need to include rest_framework.authtoken in INSTALLED_APPS setting.
+
+	INSTALLED_APPS = [
+		...,
+		'rest_framework.authtoken',
+	]
+
+	make sure to run the migrate command.
+
+	Create an endpoint to generate a new token for the user or get the existing token for user.
+
+	in project level urls.py
+
+	from rest_framework.authtoken.views import obtain_auth_token
+	
+	urlpatterns = [
+		...,
+		path('token/', obtain_auth_token),
+	]
+
+	After creating the api's you can use tokenauthentication to restrict unauthenticated user from accessing the api 
+	or part of an api
+
+	To use tokenauthentication for any perticular api
+	in views.py
+	from rest_framework.authentication import TokenAuthentication
+	from rest_framework.permissions import IsAuthenticated
+
+	class BlogViewSet(viewsets.ModelViewSet):
+		serializer_class = BlogSerializer
+		queryset = Blog.objects.all()
+		authetication_classes = [TokenAuthentication]
+		permission_classes = [IsAuthenticated]
+
+	

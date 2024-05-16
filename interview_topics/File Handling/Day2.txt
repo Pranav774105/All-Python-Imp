@@ -1,0 +1,10 @@
+x --> raise FileExistError if file present else same as write can write only
+	
+r+ --> read and then write
+	seek(offset) Change the cursor position by bytes as specified
+	tell() --> to return current position of the cursor from the begining of file
+w+ --> overwrite all data. write and then read data
+a+ --> read and append at end only
+***************************************************************************
+
+

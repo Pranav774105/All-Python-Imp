@@ -1,0 +1,64 @@
+f.name, f.mode, f.closed
+
+
+
+feedback form
+
+fname = input('Enter file name') + '.txt'
+f = open('c:\\inputs\\' + fname , 'w')
+feedback = input('Enter Your Feedback')
+f.write(feedback)
+f.close()
+
+**********************************************************
+
+**********************************************************
+
+data = 'Welcome to cjc'
+f = open('abc.txt', 'w')
+f.write(data)
+with open('abc.txt', 'r+') as f:
+	text = f.read()
+	print(text)
+	print('The current position :', f.tell())
+	f.seek(11)
+	print('The current position :', f.tell())
+	f.write('cjc, pune')
+	f.close()
+**********************************************************
+
+os.listdir('dir_path')
+os.rmdir("myfolder")
+#creating a new directory with the name new    
+os.mkdir("new")    
+This method returns the current working directory.
+os.getcwd()
+The chdir() method is used to change the 
+current working directory to a specified directory. 
+chdir("new-directory")
+
+
+shutil.rmtree('path')
+
+***********************************************************
+
+
+
+What is perhaps important from practical point of view is that the buffering parameter determines when the data you are sending to the stream is actually saved to disk.
+
+When you open a file without the buffering parameter, and write some stuff to it, you will see the data is written only after the with open(...) as foo: block is exited (or when the file's close() method is called), 
+or when some system-determined default buffer size is reached. But if you set the buffering parameter, it will write the data as soon as that size of the buffer is reached.
+
+Thus using i.e. open('file.txt', 'w', buffering=1) is a useful thing to do when you have a long-running application, 
+and you are sending some data to a file, and you want it to save after each line, and not only after the application quits. Otherwise a crash, or a power outage, etc. could cause the data to be lost.
+************************************************************
+
+https://www.javatpoint.com/python-files-io
+https://overiq.com/c-programming-101/basics-of-file-handling-in-c/#:~:text=The%20buffer%20memory%20is%20a,buffer%20is%20full%20or%20not.
+https://artificialintelligencestechnology.com/python/file-flush-method-in-python/
+https://artificialintelligencestechnology.com/python/python-file-handling/
+
+
+
+
+

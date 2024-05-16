@@ -1,0 +1,66 @@
+JWTAUthentication:
+	JWT stands for JSON Web Token.
+
+	A JSON web token(JWT) is JSON Object which is used to securely transfer information over the 
+	web(between two platforms).
+
+	It can be used for an authentication system and can also be used for information exchange.
+
+	JWT is divided into 3 parts Header, Payload, Signature.
+	
+	Header - it has information about the algorithm is used to generate the the token and type of the token
+
+	Payload - Payload contains the information about the user.
+
+	Signature - Encoding to create the token and decode the token.
+
+
+
+JWTAuthentication in Django Rest Framework - 
+
+	1. install the library djangorestframework-simplejwt
+		pip install djangorestframework-simplejwt
+
+	2. in your project's settings.py register the application in INSTALLED_APPS
+		INSTALLED_APPS =[
+				......,
+				'rest_framework_simplejwt',
+		]
+
+	3. create endpoints for the tokens (access token, refresh token).
+		from rest_framework_simplejwt.views import token_obtain_pair, token_refresh
+
+		urlpatterns = [
+			...,
+			path('access/', token_obtain_pair, name='access-token'),
+    		path('refresh/', token_refresh, name='refresh_token'),
+		]
+
+		By default the lifetime of access token is 5 minutes.
+		By default the lifetime of refresh token is 24 hours.
+
+	4. By using refresh token we can generate or create brand new access token.
+
+
+	5. To Provide Default Authentication for your application
+
+		settings.py
+		REST_FRAMEWORK = {
+			'DEFAULT_AUTHENTICATION_CLASSES':[
+					'rest_framework_simplejwt.authentication.JWTAuthentication'
+				],
+			'DEFAULT_PERMISSION_CLASSES:[
+					'rest_framework.permissions.IsAuthenticated'
+				]
+		}
+
+	and for any perticular API 
+	in views.py
+	from rest_framework_simplejwt.authentication import JWTAuthentication
+
+
+	class ViewSet1(viewsets.ModelViewSet):
+			queryset = 
+			serializer_class =
+			authentication_classes = [JWTAuthentication]
+			permission_classes = [IsAuthenticated]

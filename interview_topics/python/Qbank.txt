@@ -1,0 +1,296 @@
+write down on notebook, create a pdf and submit on whtsp grp till 30 oct.
+
+
+
+*******Solve********
+
+Q1. What is the difference between list and tuples in Python?
+
+Q2. What are the key features of Python?
+
+Q3.Python an interpreted language. Explain.
+
+Q4.What are Python namespaces explain LEGB rule? --------->
+
+Q5.What are decorators in Python? Give Examples
+
+Q6.What are Dict and List comprehensions? Give Examples
+
+Q7.What are the common built-in data types in Python?
+
+Q8.What is the difference between .py and .pyc files?
+
+Q9.What is slicing in Python?
+
+Q10.What are Keywords in Python? enlist any 15
+
+Q11. How is memory managed in Python? --------->
+
+Q12.What are local variables and global variables in Python?
+with examples.
+
+Q13. Is python case sensitive? True/False only
+
+Q14. What is the difference between Python Arrays and lists?  --------->
+
+Q15. What are functions in Python?Example
+
+Q16.What is __init__, __str__, __name__?  --------->
+
+Q17.What is a lambda function?Example
+
+Q18. What is self in Python?
+
+Q19. How does break, continue and pass work?
+
+Q20. What is pickling and unpickling? --------->
+
+Q21. What are the generators in python?Example
+
+Q22. How will you capitalize the first letter of string?
+s = aBCD
+
+Q23. How can the ternary operators be used in python? --------->
+
+Q24. What does this mean: *args, **kwargs? And why would we use it?
+
+
+Q25. What is the difference between deep and shallow copy? --------->
+
+Q26. How is Multithreading achieved in Python? 
+
+Q27. Explain Inheritance, Overriding in Python with an example
+
+Q28. What is monkey patching in Python?Give example  --------->
+
+
+Q29. A WAP
+
+	*
+       ***
+      *****
+     *******
+    
+
+Q29. B WAP
+ABCDE
+ BCDE
+  CDE
+   DE
+    E
+
+Q30. Write a program in Python to check if a number is prime. 
+
+Q31. Write a program in Python to check if a sequence is a Palindrome.
+
+
+Multiple Choice Questions (MCQ) – Python Interview Questions
+Q32. Which of the following statements create a dictionary? (Multiple Correct Answers Possible)
+a) d = {}
+b) d = {“john”:40, “peter”:45}
+c) d = {40:”john”, 45:”peter”}
+d) d = (40:”john”, 45:”50”)
+
+
+Q33. What is the maximum possible length of an identifier?
+a) 31 characters
+b) 63 characters
+c) 79 characters
+d) None of the above
+
+
+Q34. Which of the following is an invalid statement?
+a) abc = 1,000,000
+b) a b c = 1000 2000 3000
+c) a,b,c = 1000, 2000, 3000
+d) a_b_c = 1,000,000
+
+Q35. What is the output of the following?
+try:
+    if '1' != 1:
+        raise "someError"
+    else:
+        print("someError has not occured")
+except "someError":
+    print ("someError has occured")
+a) someError has occured
+b) someError has not occured
+c) invalid code
+d) none of the above
+
+Q36. When will the else part of try-except-else be executed?
+a) always
+b) when an exception occurs
+c) when no exception occurs
+d) when an exception occurs into except block
+
+Q37.What is the output of the following statement "Hello World"[::-1]?
+
+
+"Hello World"
+
+"World Hello"
+
+"dlroW olleH"
+
+"olleH dlroW"
+
+
+Q38.Suppose list1 = [3,4,5,2,1,0], what is list1 after list1.pop(1)?
+
+
+list1 = [3,4,5,2,1]
+
+list1 = [3,4,5,2,0]
+
+list1 = [3,5,2,1,0]
+
+list1 = [3,4,5,2]
+
+
+Q39.Which of the following is a protected attribute?
+
+
+__sara__
+
+__ansh
+
+_sara_
+
+ansh__
+
+
+
+Q40.What is the output of the following program?
+
+class A(object):
+   def __init__(self, a):
+       self.num = a
+   def mul_two(self):
+       self.num *= 2
+ 
+class B(A):
+   def __init__(self, a):
+       X.__init__(self, a)
+   def mul_three(self):
+       self.num *= 3
+ 
+obj = B(4)
+print(obj.num)
+ 
+obj.mul_two()
+print(obj.num)
+ 
+obj.mul_three()
+print(obj.num)
+
+4 8 24
+
+4 4 64
+
+4 8 64
+
+None of the above
+
+
+
+Q41.What is the output of the below program?
+
+class Human(object):
+   def __init__(self, name):
+       self.human_name = name
+         
+   def getHumanName(self):
+       return self.human_name
+     
+   def isEmployee(self):
+       return False
+ 
+class IBEmployee(Human):
+   def __init__(self, name, emp_id): 
+       super(IBEmployee, self).__init__(name)
+       self.emp_id = emp_id
+         
+   def isEmployee(self):
+       return True
+         
+   def get_emp_id(self):
+       return self.emp_id
+ 
+# Driver code
+employee = IBEmployee("Mr Employee", "IB007") 
+print(employee.getHumanName(), employee.isEmployee(), employee.get_emp_id()
+
+(None, True, ‘IB007’)
+
+(‘Mr Employee’, True, ‘IB007’)
+
+(“”, False, ‘IB007’)
+
+Runtime error
+
+
+
+Q42.What is the output of the below code?
+
+class Person:
+   def __init__(self, first_name, last_name):
+       self.first_name = first_name
+       self.last_name = last_name
+
+first_name = "XYZ"
+person = Person(first_name, "ABC")
+first_name = "LMN"
+person.last_name = "PQR"
+print(person.first_name, person.last_name)
+
+XYZ ABC
+
+XYZ PQR
+
+LMN ABC
+
+LMN PQR
+
+
+
+Q43.What is the output of the below code?
+
+class X:
+    def __init__(self):
+        self.__num1 = 5
+        self.num2 = 2
+
+    def display_values(self):
+        print(self.__num1, self.num2)
+class Y(X):
+    def __init__(self):
+        super().__init__()
+        self.__num1 = 1
+        self.num2 = 6 
+obj = Y()
+obj.display_values()
+
+5 6
+
+1 2
+
+5 2
+
+1 6
+**********   logical  ***********
+10 problems on list.
+10 problems on dict.
+10 problems on string.
+
+
+*********************************  
+
+write down on notebook, create a pdf and submit on whtsp grp till 30 oct.
+
+
+
+
+
+
+

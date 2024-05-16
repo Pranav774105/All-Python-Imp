@@ -1,0 +1,50 @@
+Generic Views :-
+	The generic views provided by REST framework allow you to quickly build API views that map closely to your
+	database models.
+
+		Django Rest Framework provides you some built-in generic views which you can use for building API's.
+		e.g.
+			ListAPIView
+			CreateAPIView
+			RetrieveAPIView
+			UpdateAPIView
+			DestroyAPIView
+
+	Apart from these DRF also provides you some built-in generic views that provides you functionality to combine
+	the logic of related methods:
+			ListCreateAPIView
+			RetrieveUpdateDestroyAPIView
+			RetrieveUpdateAPIView
+			RetrieveDestroyAPIView
+
+		How To Create/Design API's using generic views
+		
+		1. import the generics module from rest_framework
+			from rest_framework import generics
+	
+		2. extend the generic views to design the API
+
+			e.g to create the resource and retrieve all the resources of perticular database model 
+
+			class PostListCreateAPIView(generics.ListCreateAPIView):
+				serializer_class = PostSerializer
+				queryset = Post.objects.all()
+
+	
+			Note that you don't need to define any method inside your API class as generic views already take care of
+			it.
+			
+			So the above API we just designed will create a new resource on the server as well as retrieve all the 
+			resources of that perticular database model.
+
+			Simillarly we can create API to retrieve, update or delete the resource from the server using generic view
+			class RetrieveUpdateDestroyAPIView.
+
+			class PostRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
+				serializer_class = PostSerializer
+				queryset = Post.objects.all()
+
+			Note that UpdateAPIView will do update as well as partial_update
+
+		3. Create endpoints/routes/urls for the API's we have created.
+		

@@ -1,0 +1,119 @@
+import MySQLdb
+conn = MySQLdb.connect(user="root", password="root", host="localhost", db="b33pdbc")
+curs = conn.cursor()
+conn.autocommit('on')
+
+
+class BankInfo:
+    def deposite(self, un):
+        amt = int(input('Enter amount to deposite'))
+        query = f'insert into history values ("{un}", "+", {amt})'
+        curs.execute(query)
+        query = f'select balance from bank_tb where username = "{un}"'
+        curs.execute(query)
+        for i in curs:
+            bal = i[0] #(0,)
+        bal = bal + amt
+        query = f'update bank_tb set balance = {bal} where username = "{un}"'
+        curs.execute(query)
+        print(f'Your current balance is { bal }')
+
+    def withdraw(self, un):
+        amt = int(input('Enter amount to withdraw'))
+        query = f'insert into history values ("{un}", "-", {amt})'
+        curs.execute(query)
+        query = f'select balance from bank_tb where username = "{un}"'
+        curs.execute(query)
+        for i in curs:
+            bal = i[0]
+        bal = bal - amt
+        query = f'update bank_tb set balance = {bal} where username = "{un}"'
+        curs.execute(query)
+        print(f'Your current balance is {bal}')
+
+    def check_balance(self, un):
+        query = f'select balance from bank_tb where username = "{un}"'
+        curs.execute(query)
+        for i in curs:
+            bal = i[0]
+        print(f'Hi, {un} Your current balance is {bal}')
+
+    def history(self, un):
+        query = f'select * from history where username  = "{un}"'
+        curs.execute(query)
+        for i in curs:
+            print(i)
+
+
+b = BankInfo()
+
+def signup():
+    un = input('Enter Username')
+    pw = input('Enter password')
+    try:
+        query = f'insert into bank_tb (username, password) values("{un}" , "{pw1}")'
+        curs.execute(query)
+        print('User Added!!!')
+    except:
+        print('Username already Taken, plz Enter new Username')
+        signup()
+
+
+def login():
+    ''' Username func  '''
+    un = input('Enter username')
+    query = f'select username from bank_tb where username = "{un}"'
+    curs.execute(query)
+    for i in curs:
+        print(i)  # ('abc',)
+        break
+    else:
+        print('No Such username')
+        login()
+
+    ''' password func '''
+
+    query = f'select password from bank_tb where username = "{un}"'
+    curs.execute(query)
+    pw = input('Enter password')
+    for i in curs:
+        if i[0] == pw:
+            print('Authenticated')
+            print('****** Menu ****** \n'\
+                  '1. Deposite \n'\
+                  '2. Withdraw \n'\
+                  '3. Check Balance \n'\
+                  '4. History \n'\
+                  '5. Logout')
+            ch1 = int(input('Enter your choice'))
+            if ch1 == 1:
+                b.deposite(un)
+            elif ch1 == 2:
+                b.withdraw(un)
+            elif ch1 == 3:
+                b.check_balance(un)
+            elif ch1 == 4:
+                b.history(un)
+            elif ch1 == 5:
+                pass
+            else:
+                pass
+
+        else:
+            print('Plz Enter correct password')
+
+
+while True:
+    print('********* Menu **********\n'\
+          '1. Sign Up\n'\
+          '2. Login \n'\
+          '3. Exit\n')
+    ch = int(input('Enter your choice'))
+    if ch == 1:
+        signup()
+    elif ch == 2:
+        login()
+    elif ch == 3:
+        pass
+    else:
+        print('Please Enter valid number')

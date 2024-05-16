@@ -1,0 +1,30 @@
+Authentications and Authorization :
+		Authentication - Authentication is a mechanism to check whether any user is associated with incoming request.
+		
+		Authentication is the process of verifying the identity of a user or system. In other words, it is a way of confirming that someone is who they claim to be.
+
+		Authentication is typically performed by providing some form of information or credentials.
+
+		Set of Credentials :- user , where this request came from or token signed with the request.
+
+		Authorization :- Authorization means whether to allow the request or not. Permissions are used to restrict the user from accessing part or functionality of the view.
+
+		Authorization is a process of granting or denying the access to resource or actions based on the authenticated user's identity and the permissions they have been granted. In other words, it is a process of determining whether a user has the necessary rights to access perticular resource.
+
+		Authorization is typically done after authentication. Once the user has been authenticated , authorization can control what actions can they perform. This is done by assigning roles or permissions to users.
+
+		Authentications and Permissions always work together.
+
+		Authentications and Permissions are checked at the start of the view or before any other code gets executed.
+
+		By Default permissions in django rest framework is AllowAny.
+
+		Django Rest framework provides various types of authentication techniques.
+		
+		TokenAuthentication - token is created for a user , it is created only once per user.
+		JWTAuthentication   - JSON Web Token, one of the most popular authentication scheme.
+		OAuth2Authentication- Open Authorization is recent one and more secure among these 3 authentication schemes.
+		
+
+		
+		

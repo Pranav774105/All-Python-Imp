@@ -1,0 +1,26 @@
+def outer1(fun):
+    
+    def inner1():
+        print('*'*10)
+        fun()
+        print('*'*10)
+    return inner1
+
+
+def outer2(fun):
+    print('outer2')
+    def inner2():
+        print('@'*10)
+        print(fun())
+        
+        print('@'*10)
+    return inner2
+
+@outer1
+@outer2
+def m1():
+    return('Hello, World !!')
+##m1 = outer2(m1)
+##m1 = outer1(m1)
+m1()
+*************************************

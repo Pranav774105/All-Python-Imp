@@ -1,0 +1,30 @@
+ul
+ol
+img --> alt, width, height, src
+iframe  --> webpage , gmap
+marquee
+check box 
+radio
+block vs inline elements
+
+
+
+select --> option
+
+file --> accept
+address --> textarea --> rows, cols
+date
+button
+
+sub 
+sup
+mark
+del
+
+HTML Symbol Entities
+
+How do you insert a copyright symbol in HTML?
+You can insert a copyright symbol by using &copy; or &#169; in an HTML file.
+
+
+single page application

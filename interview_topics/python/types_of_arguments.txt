@@ -1,0 +1,80 @@
+5 Types of Arguments in Python Function Definition:
+
+default arguments
+keyword arguments
+positional arguments
+variable length positional arguments
+variable length keyword arguments
+
+
+1. default arguments
+
+def add(a,b=5,c=10):
+    return (a+b+c)
+
+
+print(add(3))
+
+print(add(3,4))
+
+print(add(2,3,4))
+
+
+
+
+2. keyword arguments
+Example:
+
+def add(a, b, c):
+    return (a+b+c)
+
+print (add(b=10,c=15, a=50))
+
+
+
+
+3. Positional Arguments
+
+def add(a,b,c):
+    return (a+b+c)
+
+During the function call, all arguments are given as positional arguments. 
+Values passed through arguments are passed to parameters by their position. 
+
+print (add(10,20,30))
+
+
+
+4. arbitrary positional arguments:
+For arbitrary positional argument, an asterisk (*) is placed before a parameter in function definition which can hold non-keyword variable-length arguments.
+ These arguments will be wrapped up in a tuple. 
+Before the variable number of arguments,
+ zero or more normal arguments may occur
+def add(*b):
+    result=0
+    for i in b:
+         result=result+i
+    return result
+
+print (add(1,2,3,4,5))
+#Output:15
+print (add(10,20))
+#Output:30
+
+
+
+5.arbitrary keyword arguments:
+For arbitrary positional argument, a double asterisk (**) is placed before a parameter in a function which can hold keyword variable-length arguments.
+
+Example:
+
+def fn(**a):
+    for i in a.items():
+        print (i)
+fn(numbers=5,colors="blue",fruits="apple")
+'''
+Output:
+('numbers', 5)
+('colors', 'blue')
+('fruits', 'apple')
+'''

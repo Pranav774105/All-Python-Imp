@@ -1,0 +1,168 @@
+Comprehensions in Python
+
+we can have nested list
+l = ['Hello', 'Hii']
+l1 = ['CJC', 'COE']
+l2 = []
+for i in l:
+	for j in l1:
+		l2.append(i+' '+j)
+print(l2)
+
+var = [i+' '+j for i in l for j in l1 ]
+print(var)
+
+
+
+************************************************
+
+
+var = [i for i in range(3) if x%2 == 0]		
+print(var)
+************************************
+
+l = []
+l1 = []
+
+var = [l.append(i) if i % 2 == 0 else l1.append(i) for i in range(10)]
+print(l, l1)
+
+************************************
+
+
+
+
+
+
+
+Example #1: Suppose we want to create an output list which contains only the even numbers which are present in the input list. 
+Let’s see how to do this using for loops and list comprehension and decide which method suits better.
+
+
+
+Example #2: Suppose we want to create an output list which contains squares of all the numbers from 1 to 9. Let’s see how to do this using for loops and list comprehension.
+
+
+# Constructing output list using for loop
+output_list = []
+for var in range(1, 10):
+    output_list.append(var ** 2)
+      
+print("Output List using for loop:", output_list)
+Output:
+
+Output List using for loop: [1, 4, 9, 16, 25, 36, 49, 64, 81]
+
+# Constructing output list
+# using list comprehension
+list_using_comp = [var**2 for var in range(1, 10)]
+  
+print("Output List using list comprehension:", 
+                              list_using_comp)
+Output:
+
+Output List using list comprehension: [1, 4, 9, 16, 25, 36, 49, 64, 81]
+
+
+
+
+
+
+
+
+
+
+Example #2: Given two lists containing the names of states and their corresponding capitals, construct a dictionary which maps the states with their respective capitals. Let’s see how to do this using for loops and dictionary comprehension.
+
+
+state = ['Gujarat', 'Maharashtra', 'Rajasthan']
+capital = ['Gandhinagar', 'Mumbai', 'Jaipur']
+  
+output_dict = {}
+  
+# Using loop for constructing output dictionary
+for (key, value) in zip(state, capital):
+    output_dict[key] = value
+  
+print("Output Dictionary using for loop:",
+                              output_dict)
+Output:
+
+Output Dictionary using for loop: {'Gujarat': 'Gandhinagar',
+                                   'Maharashtra': 'Mumbai', 
+                                   'Rajasthan': 'Jaipur'}
+
+# Using Dictionary comprehensions
+# for constructing output dictionary
+  
+state = ['Gujarat', 'Maharashtra', 'Rajasthan']
+capital = ['Gandhinagar', 'Mumbai', 'Jaipur']
+  
+dict_using_comp = {key:value for (key, value) in zip(state, capital)}
+  
+print("Output Dictionary using dictionary comprehensions:", 
+                                           dict_using_comp)
+Output:
+
+Output Dictionary using dictionary comprehensions: {'Rajasthan': 'Jaipur',
+                                                    'Maharashtra': 'Mumbai',
+                                                    'Gujarat': 'Gandhinagar'}
+
+
+
+
+
+
+
+ 
+
+ Let’s look at the following example to understand set comprehensions.
+
+Example #1 : Suppose we want to create an output set which contains only the even numbers that are present in the input list. 
+Note that set will discard all the duplicate values. Let’s see how we can do this using for loops and set comprehension.
+
+
+input_list = [1, 2, 3, 4, 4, 5, 6, 6, 6, 7, 7]
+  
+output_set = set()
+  
+# Using loop for constructing output set
+for var in input_list:
+    if var % 2 == 0:
+        output_set.add(var)
+  
+print("Output Set using for loop:", output_set)
+Output:
+
+Output Set using for loop: {2, 4, 6}
+
+# Using Set comprehensions 
+# for constructing output set
+  
+input_list = [1, 2, 3, 4, 4, 5, 6, 6, 6, 7, 7]
+  
+set_using_comp = {var for var in input_list if var % 2 == 0}
+  
+print("Output Set using set comprehensions:",
+                              set_using_comp)
+Output:
+
+Output Set using set comprehensions: {2, 4, 6}
+
+
+
+
+
+
+
+
+
+
+ 
+Let’s look at the following example to understand generator comprehension:
+
+
+
+
+
+*******************************************************************

@@ -1,0 +1,39 @@
+Scope Resolution in Python | LEGB Rule
+
+Namespaces : A namespace is a container where names are mapped to objects,
+	they are used to avoid confusions in cases where same names exist in different namespaces.
+
+A namespace is a system that has a unique name for each and every object in Python. An object might be a variable or a method. 
+Python itself maintains a namespace in the form of a Python dictionary.
+
+Scope : A scope defines the order in which the namespaces have to be searched in order to obtain the mappings of name-to-object(variables). 
+It defines the accessibility and the lifetime of a variable. Let us take a simple example as shown below:
+
+
+pi = 'outer pi variable'
+  
+def print_pi():
+    pi = 'inner pi variable'
+    print(pi)
+  
+print_pi()
+print(pi)
+
+
+Output:
+
+inner pi variable
+outer pi variable
+Above program give different outputs because the same variable name pi resides in different namespaces, 
+one inside the function print_pi and the other in the upper level. When print_pi() gets executed, ‘inner pi variable‘ is 
+printed as that is pi value inside the function namespace. The value ‘outer pi variable‘ is printed when pi is referenced in the outer namespace. 
+From the above example, we can guess that there definitely is a rule which is followed, in order in decide from which namespace a variable has to be picked.
+ 
+Scope resolution via LEGB rule :
+In Python, the LEGB rule is used to decide the order in which the namespaces are to be searched for scope resolution.
+The scopes are listed below:
+
+Local(L): Defined inside function/class
+Enclosed(E): Defined inside enclosing functions(Nested function concept)
+Global(G): Defined at the uppermost level
+Built-in(B): Reserved names in Python builtin modules
